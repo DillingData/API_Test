@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d1QRhlya4G8n7WR92PfVPgHKRdmaxKG0rUO9+MphJ9U=",
+  "Hash": "Dv2OvfO9kTybJPt9g5a+UR2J+k5ciN0kiMiCqgM0c70=",
   "Source": "ApiPlayground",
   "BasePath": "_content/ApiPlayground",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\GitProjects\\apiplayground\\ApiPlayground\\ApiPlayground\\wwwroot\\js\\Weather.js",
+      "SourceId": "ApiPlayground",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GitProjects\\apiplayground\\ApiPlayground\\ApiPlayground\\wwwroot\\",
+      "BasePath": "_content/ApiPlayground",
+      "RelativePath": "js/Weather.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Weather.js"
     },
     {
       "Identity": "C:\\GitProjects\\apiplayground\\ApiPlayground\\ApiPlayground\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
