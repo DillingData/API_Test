@@ -9,5 +9,14 @@ namespace ApiPlayground.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult GetWeather(string lat, string longt)
+        {
+            string test = lat;
+            string test2 = longt;
+
+            return Content("it works " + test + " & " + test2);
+        }
     }
 }
