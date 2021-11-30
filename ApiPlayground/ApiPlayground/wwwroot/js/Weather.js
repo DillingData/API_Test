@@ -1,6 +1,6 @@
 ﻿var x = document.getElementById("Test")
 
-function getLocation() {
+window.onload = function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
@@ -12,13 +12,10 @@ function showPosition(position) {
     var lat = position.coords.latitude;
     var longt = position.coords.longitude;
 
-    //x.innerHTML = lat + " " + longt
-
     var request = new XMLHttpRequest;
 
-    request.open("GET", '/Weather/GetWeather?lat='+lat+'&longt='+longt);
+    request.open("GET", '/Weather/GetWeather?lat='+lat+'&longt=$'+longt);
 
-    //request.open("GET", '/Weather/GetWeather?lat=${lat}&longt=${longt}');
 
     request.onreadystatechange = function () {
         // Check if the request is compete and was successful
@@ -29,9 +26,5 @@ function showPosition(position) {
             x.innerHTML = "THIS DIDNT WORK"
         }
     };
-
     request.send();
-
-    //x.innerHTML = "Latitude: " + lat +
-    //    "<br>Longitude: " + long;
 }
