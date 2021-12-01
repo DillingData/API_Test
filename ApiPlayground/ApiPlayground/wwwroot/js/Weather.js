@@ -12,13 +12,17 @@ function showPosition(position) {
     var lat = position.coords.latitude;
     var longt = position.coords.longitude;
 
+    //shortens the Lat/Long to 2 decimals
+    var latShort = lat.toFixed(2);
+    var longShort = longt.toFixed(2);
+
     var request = new XMLHttpRequest;
 
     //for published version
-    request.open("GET", '/ApiPlayground/Weather/GetWeather?lat=' + lat + '&longt=' + longt);
+    //request.open("GET", '/ApiPlayground/Weather/GetWeather?lat=' + lat + '&longt=' + longt);
 
     //for dev version on local host
-    //request.open("GET", '/ApiPlayground/Weather/GetWeather?lat=' + lat + '&longt=' + longt);
+    request.open("GET", '/Weather/GetWeather?lat=' + latShort + '&longt=' + longShort);
 
     request.onreadystatechange = function () {
         // Check if the request is compete and was successful
