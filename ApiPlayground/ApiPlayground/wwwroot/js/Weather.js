@@ -14,8 +14,11 @@ function showPosition(position) {
 
     var request = new XMLHttpRequest;
 
-    request.open("GET", '/Weather/GetWeather?lat='+lat+'&longt=$'+longt);
+    //for published version
+    request.open("GET", '/ApiPlayground/Weather/GetWeather?lat=' + lat + '&longt=' + longt);
 
+    //for dev version on local host
+    //request.open("GET", '/ApiPlayground/Weather/GetWeather?lat=' + lat + '&longt=' + longt);
 
     request.onreadystatechange = function () {
         // Check if the request is compete and was successful
