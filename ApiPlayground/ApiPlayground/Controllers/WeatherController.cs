@@ -10,14 +10,15 @@ namespace ApiPlayground.Controllers
             return View();
         }
 
-        [HttpGet]
         public ActionResult GetWeather(string lat, string longt)
         {
-            //string test = lat;
-            //string test2 = longt;
+            string latitude = lat;
+            string longtitude = longt;
 
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
-            string URL = "api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey;
+            string URL = "api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longt + "&appid=" + apiKey;
+
+
 
             //example URL from openweathermap API
             //api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid={API key}
@@ -25,6 +26,12 @@ namespace ApiPlayground.Controllers
 
 
             return Content("it works " + lat + " & " + longt)   ;
+        }
+
+        static async Task sendApi(string[] args)
+        {
+            var client = new HttpClient();
+            var result = 
         }
     }
 }
