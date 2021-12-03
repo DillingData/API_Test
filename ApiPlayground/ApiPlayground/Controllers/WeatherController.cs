@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ApiPlayground.Models;
 using System.Net.Http;
+using System.Text.Json;
 
 namespace ApiPlayground.Controllers
 {
@@ -11,14 +12,30 @@ namespace ApiPlayground.Controllers
             return View();
         }
 
-        protected override async Task GetApi(string[] args, string lat, string longt)
+        public IEnumerable<WeatherModel>? weatherModels { get; set; }
+
+        private readonly IHttpClientFactory _httpClientFactory;
+
+        public BasicModel(IHttpClientFactory httpClientFactory) =>
+            _httpClientFactory = httpClientFactory;
+
+        public async Task OnGet(string lat, string longt)
         {
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
-            string URL = "api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey;
 
-            var reguest = new HttpRequestMessage(HttpMethod.Get, URL);
+            var httpRequestMessage = new HttpRequestMessage(
+                HttpMethod.Get,
+                "api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
+            var httpClient = _httpClientFactory.CreateClient();
+            var httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
 
-            //var client = IHttpClientFactory.CreateClient();
+            if (httpResponseMessage.IsSuccessStatusCode)
+            {
+                using var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
+
+                weatherModels = await JsonSerializer.DeserializeAsync
+                <IEnumerable<WeatherModel>>(contentStream);
+            }
         }
 
         public ActionResult GetWeather(string lat, string longt)
@@ -36,14 +53,7 @@ namespace ApiPlayground.Controllers
 
 
 
-            return Content("it works " + lat + " & " + longt)   ;
+            return Content("it works " + lat + " & " + longt);
         }
-        /*
-        static async Task SendApi(string[] args)
-        {
-            var client = new HttpClient();
-            var result = await 
-        }
-        */
     }
 }
