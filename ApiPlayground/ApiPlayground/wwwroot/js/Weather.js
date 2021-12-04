@@ -22,7 +22,7 @@ function showPosition(position) {
     //request.open("GET", '/ApiPlayground/Weather/GetWeather?lat=' + lat + '&longt=' + longt);
 
     //for dev version on local host
-    request.open("GET", '/Weather/GetWeather?lat=' + latShort + '&longt=' + longShort);
+    request.open("POST", '/Weather/GetWeather?lat=' + latShort + '&longt=' + longShort);
 
     request.onreadystatechange = function () {
         // Check if the request is compete and was successful

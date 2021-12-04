@@ -24,8 +24,7 @@ namespace ApiPlayground.Controllers
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
 
             var httpRequestMessage = new HttpRequestMessage(
-                HttpMethod.Get,
-                "api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
+                HttpMethod.Get, "api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
             var httpClient = _httpClientFactory.CreateClient();
             var httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
 
@@ -40,20 +39,9 @@ namespace ApiPlayground.Controllers
 
         public ActionResult GetWeather(string lat, string longt)
         {
-            string latitude = lat;
-            string longtitude = longt;
-
-            string apiKey = "bef904c9d4916fca8184a376a9534a49";
-            string URL = "api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longt + "&appid=" + apiKey;
-
-
-
-            //example URL from openweathermap API
-            //api.openweathermap.org/data/2.5/weather?lat=55.87&lon=12.87&appid=bef904c9d4916fca8184a376a9534a49
-
-
+            OnGet(lat, longt);
 
             return Content("it works " + lat + " & " + longt);
-        }
+            }
     }
 }
