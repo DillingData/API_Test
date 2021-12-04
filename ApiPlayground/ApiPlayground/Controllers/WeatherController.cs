@@ -12,11 +12,11 @@ namespace ApiPlayground.Controllers
             return View();
         }
 
-        public IEnumerable<WeatherModel>? weatherModels { get; set; }
+        public IEnumerable<WeatherModel>? WeatherModels { get; set; }
 
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public BasicModel(IHttpClientFactory httpClientFactory) =>
+        public WeatherController(IHttpClientFactory httpClientFactory) =>
             _httpClientFactory = httpClientFactory;
 
         public async Task OnGet(string lat, string longt)
@@ -33,7 +33,7 @@ namespace ApiPlayground.Controllers
             {
                 using var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
 
-                weatherModels = await JsonSerializer.DeserializeAsync
+                WeatherModels = await JsonSerializer.DeserializeAsync
                 <IEnumerable<WeatherModel>>(contentStream);
             }
         }
