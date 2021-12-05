@@ -19,12 +19,12 @@ namespace ApiPlayground.Controllers
         public WeatherController(IHttpClientFactory httpClientFactory) =>
             _httpClientFactory = httpClientFactory;
 
-        public async Task OnGet(string lat, string longt)
+        public async Task OnGet(string lat, string longt )
         {
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
 
             var httpRequestMessage = new HttpRequestMessage(
-                HttpMethod.Get, "api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
+                HttpMethod.Get, "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
             var httpClient = _httpClientFactory.CreateClient();
             var httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
 
