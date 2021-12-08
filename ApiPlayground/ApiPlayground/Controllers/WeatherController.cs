@@ -7,6 +7,8 @@ namespace ApiPlayground.Controllers
 {
     public class WeatherController : Controller
     {
+        List<WeatherModel> Weather;
+
         public IActionResult Index()
         {
             return View();
@@ -21,6 +23,8 @@ namespace ApiPlayground.Controllers
 
         public async Task OnGet(string lat, string longt )
         {
+            Weather = new List<WeatherModel>();
+
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
 
             var httpRequestMessage = new HttpRequestMessage(
@@ -32,16 +36,16 @@ namespace ApiPlayground.Controllers
             {
                 using var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
 
-                WeatherModel? weathermodel = await JsonSerializer.DeserializeAsync
-                <WeatherModel>(contentStream);
+                Weather weathermodel = await JsonSerializer.DeserializeAsync
+                <Weather>(contentStream);
             }
         }
-
+        /*
         public ActionResult GetWeather(string lat, string longt)
         {
             OnGet(lat, longt);
 
             return Content("it works " + lat + " & " + longt);
-            }
+        }*/
     }
 }
