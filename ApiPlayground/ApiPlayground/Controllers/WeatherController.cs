@@ -7,14 +7,14 @@ namespace ApiPlayground.Controllers
 {
     public class WeatherController : Controller
     {
-        List<WeatherModel> Weather;
+        //IEnumerable<WeatherModel> Weather;
 
         public IActionResult Index()
         {
             return View();
         }
 
-        //public IEnumerable<WeatherModel>? WeatherModels { get; set; }
+        public IEnumerable<WeatherModel>? WeatherModels { get; set; }
 
         private readonly IHttpClientFactory _httpClientFactory;
 
@@ -23,7 +23,7 @@ namespace ApiPlayground.Controllers
 
         public async Task OnGet(string lat, string longt )
         {
-            Weather = new List<WeatherModel>();
+            //Weather = new List<WeatherModel>();
 
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
 
@@ -36,7 +36,7 @@ namespace ApiPlayground.Controllers
             {
                 using var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
 
-                Weather weathermodel = await JsonSerializer.DeserializeAsync
+                WeatherModels = (IEnumerable<WeatherModel>?)await JsonSerializer.DeserializeAsync
                 <Weather>(contentStream);
             }
         }
