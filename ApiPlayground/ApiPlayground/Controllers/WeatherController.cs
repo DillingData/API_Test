@@ -7,25 +7,23 @@ namespace ApiPlayground.Controllers
 {
     public class WeatherController : Controller
     {
-        //IEnumerable<WeatherModel> Weather;
-
         public IActionResult Index()
         {
             return View();
         }
 
-        public IEnumerable<WeatherModel>? WeatherModels { get; set; }
+        public IEnumerable<Root> WeatherModels { get; set; }
 
         private readonly IHttpClientFactory _httpClientFactory;
 
         public WeatherController(IHttpClientFactory httpClientFactory) =>
             _httpClientFactory = httpClientFactory;
 
-        public async Task OnGet(string lat, string longt )
+        [HttpGet]
+        public async Task OnGet(string lat, string longt)
         {
-            //Weather = new List<WeatherModel>();
-
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
+
 
             var httpRequestMessage = new HttpRequestMessage(
                 HttpMethod.Get, "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
@@ -34,18 +32,13 @@ namespace ApiPlayground.Controllers
 
             if (httpResponseMessage.IsSuccessStatusCode)
             {
-                using var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
+                var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
 
-                WeatherModels = (IEnumerable<WeatherModel>?)await JsonSerializer.DeserializeAsync
-                <Weather>(contentStream);
+                WeatherModels = await JsonSerializer.DeserializeAsync
+                <IEnumerable<Root>>(contentStream);
+
+                string test = "Ok";
             }
         }
-        /*
-        public ActionResult GetWeather(string lat, string longt)
-        {
-            OnGet(lat, longt);
-
-            return Content("it works " + lat + " & " + longt);
-        }*/
     }
 }

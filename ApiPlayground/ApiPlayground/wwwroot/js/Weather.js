@@ -27,6 +27,7 @@ function showPosition(position) {
     //Testing for OnGet method
     request.open("GET", 'Weather/OnGet?lat=' + latShort + '&longt=' + longShort);
 
+
     request.onreadystatechange = function () {
         // Check if the request is compete and was successful
         if (this.readyState === 4 && this.status === 200) {
