@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<ApiPlayground.Models.Root>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,5 +8,14 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+
+@if (Model != null)
+{
+    @foreach (var temp in Model)
+    {
+        <p>@temp.main.temp</p>
+    }
+}
 
 <script src="~/js/Weather.js" asp-append-version="true"></script>
