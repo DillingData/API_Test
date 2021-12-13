@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Root>
+﻿@model IEnumerable<ApiPlayground.Models.Root>
 
 
 @{
@@ -7,14 +7,25 @@
 
 <h1>Index</h1>
 
+<!--
 <p id="Test">Loading...</p>
+-->
 
+<!--
 <input type="button" class="btn btn-primary" onclick="location.href='@Url.Action("OnGet", "Weather")'" Testing />
-
-@if (Model != null)
+-->
+@if(Model != null)
 {
-    <p>@Root.main.</p>
+    @foreach(var temp in Model)
+    {
+        <p>@temp.main.temp.ToString()</p>
+    }
+} else
+{
+    <p>Model has no value</p>
 }
 
 
+<!--
 <script src="~/js/Weather.js" asp-append-version="true"></script>
+-->

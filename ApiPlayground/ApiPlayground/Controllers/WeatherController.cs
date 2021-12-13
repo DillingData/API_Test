@@ -34,10 +34,8 @@ namespace ApiPlayground.Controllers
             {
                 var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
 
-                WeatherModels = await JsonSerializer.DeserializeAsync
-                <IEnumerable<Root>>(contentStream);
-
-                string test = "Ok";
+                Root root = await JsonSerializer.DeserializeAsync
+                <Root>(contentStream);
             }
         }
     }
