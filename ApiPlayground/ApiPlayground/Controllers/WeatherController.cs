@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ApiPlayground.Models;
 using System.Net.Http;
-//using System.Text.Json;
+using System.Text.Json;
+using System.Net;
+using System.Text;
 using Newtonsoft.Json;
 
 namespace ApiPlayground.Controllers
@@ -10,28 +12,28 @@ namespace ApiPlayground.Controllers
     {
         public IActionResult Index()
         {
-            string apiKey = "bef904c9d4916fca8184a376a9534a49";
-
             IEnumerable<Root> root = null;
 
-            string lat = "52.12";
-            string longt = "10.50"; 
+            string lat = "55.87";
+            string longt = "12.83";
+            string apiKey = "bef904c9d4916fca8184a376a9534a49";
 
-            var httpRequestMessage = new HttpRequestMessage(
-                HttpMethod.Get, "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
-            var httpClient = _httpClientFactory.CreateClient();
-            var httpResponseMessage = httpClient.Send(httpRequestMessage);
+            var requestURI = string.Format("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
+            var request = WebRequest.Create(requestURI);
+            var response = request.GetResponse();
 
-            if (httpResponseMessage.IsSuccessStatusCode)
-            {
-                var contentStream = httpResponseMessage.Content.ReadAsStream();
+            Stream stream = response.GetResponseStream();
+            Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
+            StreamReader readstream = new StreamReader(stream, encode);
+            string s = readstream.ReadToEnd();
 
-                root = JsonSerializer.Deserialize
-                <IEnumerable<Root>>(contentStream);
-            }
-                return View(root);
+            root = JsonConvert.DeserializeObject<IEnumerable<Root>>(s);
+
+            return View(root);
         }
-
+        
+        
+        /*
         public IEnumerable<Root> WeatherModels { get; set; }
 
         private readonly IHttpClientFactory _httpClientFactory;
@@ -39,6 +41,7 @@ namespace ApiPlayground.Controllers
         public WeatherController(IHttpClientFactory httpClientFactory) =>
             _httpClientFactory = httpClientFactory;
 
+        
         [HttpGet]
         public async Task<ActionResult> OnGet(string lat, string longt)
         {
@@ -60,6 +63,6 @@ namespace ApiPlayground.Controllers
                 return View(root);
             }
             return null;
-        }
+        }*/
     }
 }

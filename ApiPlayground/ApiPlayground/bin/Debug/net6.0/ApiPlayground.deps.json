@@ -9,6 +9,7 @@
       "ApiPlayground/1.0.0": {
         "dependencies": {
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.0",
+          "Newtonsoft.Json": "13.0.1",
           "System.Net.Http.Json": "6.0.0"
         },
         "runtime": {
