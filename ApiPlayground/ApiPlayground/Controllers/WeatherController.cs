@@ -12,7 +12,7 @@ namespace ApiPlayground.Controllers
     {
         public IActionResult Index()
         {
-            IEnumerable<Root> root = null;
+            Root? root = new Root();
 
             string lat = "55.87";
             string longt = "12.83";
@@ -27,7 +27,7 @@ namespace ApiPlayground.Controllers
             StreamReader readstream = new StreamReader(stream, encode);
             string s = readstream.ReadToEnd();
 
-            root = JsonConvert.DeserializeObject<IEnumerable<Root>>(s);
+            root = JsonConvert.DeserializeObject<Root>(s);
 
             return View(root);
         }

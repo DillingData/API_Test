@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ApiPlayground.Models.Root>
+﻿@model ApiPlayground.Models.Root
 
 
 @{
@@ -7,6 +7,16 @@
 
 <h1>Index</h1>
 
+
+@if(Model != null)
+{
+    <p>@Model.main.temp Kelvin if you want in Celsius well screw you</p>
+}
+else
+{
+    <p>Model is empty</p>
+}
+
 <!--
 <p id="Test">Loading...</p>
 -->
@@ -14,16 +24,6 @@
 <!--
 <input type="button" class="btn btn-primary" onclick="location.href='@Url.Action("OnGet", "Weather")'" Testing />
 -->
-@if(Model != null)
-{
-    @foreach(var temp in Model)
-    {
-        <p>@temp.main.temp</p>
-    }
-} else
-{
-    <p>Model has no value</p>
-}
 
 
 <!--
