@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ApiPlayground.Models.Root>
+﻿
 
 @{
     ViewData["Title"] = "Home Page";
@@ -10,12 +10,6 @@
 </div>
 
 
-@if (Model != null)
-{
-    @foreach (var temp in Model)
-    {
-        <p>@temp.main.temp</p>
-    }
-}
+
 
 <script src="~/js/Weather.js" asp-append-version="true"></script>

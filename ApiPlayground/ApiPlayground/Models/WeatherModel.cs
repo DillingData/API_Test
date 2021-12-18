@@ -3,12 +3,12 @@
 namespace ApiPlayground.Models
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
-    public class Coord
+    public class Coordinates
     {
         [JsonProperty("lon")]
-        public double lon { get; set; }
+        public double Lon { get; set; }
         [JsonProperty("lat")]
-        public double lat { get; set; }
+        public double Lat { get; set; }
     }
 
     public class Weather
@@ -72,7 +72,7 @@ namespace ApiPlayground.Models
     public class Root
     {
         [JsonProperty("coord")]
-        public Coord coord { get; set; }
+        public Coordinates coord { get; set; }
         [JsonProperty("weather")]
         public List<Weather> weather { get; set; }
         [JsonProperty("@base")]

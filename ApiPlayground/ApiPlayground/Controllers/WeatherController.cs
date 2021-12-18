@@ -10,12 +10,18 @@ namespace ApiPlayground.Controllers
 {
     public class WeatherController : Controller
     {
+        Place? coord = new Place();
         public IActionResult Index()
         {
+            
             Root? root = new Root();
 
-            string lat = "55.87";
-            string longt = "12.83";
+            //string lat = "55.87";
+            //string longt = "12.83";
+
+            string lat = coord.Lat;
+            string longt = coord.Lon;
+
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
 
             var requestURI = string.Format("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
@@ -28,14 +34,18 @@ namespace ApiPlayground.Controllers
             string s = readstream.ReadToEnd();
 
             root = JsonConvert.DeserializeObject<Root>(s);
+            
 
             return View(root);
         }
-        
-        
-        /*
-        public IEnumerable<Root> WeatherModels { get; set; }
 
+        public void StoreCoord(string lat, string longt)
+        {
+            coord.Lat = lat;
+            coord.Lon = longt;
+        }
+
+        /*
         private readonly IHttpClientFactory _httpClientFactory;
 
         public WeatherController(IHttpClientFactory httpClientFactory) =>
@@ -47,6 +57,7 @@ namespace ApiPlayground.Controllers
         {
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
 
+            Root? root = new Root();
 
             var httpRequestMessage = new HttpRequestMessage(
                 HttpMethod.Get, "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
@@ -57,12 +68,13 @@ namespace ApiPlayground.Controllers
             {
                 var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
 
-                Root root = await JsonSerializer.DeserializeAsync
+                root = await System.Text.Json.JsonSerializer.DeserializeAsync
                 <Root>(contentStream);
 
                 return View(root);
             }
             return null;
+        
         }*/
     }
 }
