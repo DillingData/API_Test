@@ -10,7 +10,9 @@
 
 @if(Model != null)
 {
-    <p>@Model.main.temp Kelvin if you want in Celsius well screw you</p>
+    <p>@Model.main.temp celsius</p>
+    <p>Feels like @Model.main.feels_like</p>
+    <p>Wind is blowing with @Model.wind.speed m/s, gusting @Model.wind.gust m/s from @Model.wind.deg degree</p>
 }
 else
 {
