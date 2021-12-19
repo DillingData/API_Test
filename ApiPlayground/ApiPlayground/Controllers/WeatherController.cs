@@ -10,21 +10,17 @@ namespace ApiPlayground.Controllers
 {
     public class WeatherController : Controller
     {
-        Place? coord = new Place();
         public IActionResult Index()
         {
-            
+
             Root? root = new Root();
 
-            //string lat = "55.87";
-            //string longt = "12.83";
-
-            string lat = coord.Lat;
-            string longt = coord.Lon;
+            var lat = HttpContext.Session.GetString("LAT");
+            var longt = HttpContext.Session.GetString("LONGT");
 
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
 
-            var requestURI = string.Format("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
+            var requestURI = string.Format("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&units=metric&appid=" + apiKey);
             var request = WebRequest.Create(requestURI);
             var response = request.GetResponse();
 
@@ -41,40 +37,8 @@ namespace ApiPlayground.Controllers
 
         public void StoreCoord(string lat, string longt)
         {
-            coord.Lat = lat;
-            coord.Lon = longt;
+            HttpContext.Session.SetString("LAT", lat);
+            HttpContext.Session.SetString("LONGT", longt);
         }
-
-        /*
-        private readonly IHttpClientFactory _httpClientFactory;
-
-        public WeatherController(IHttpClientFactory httpClientFactory) =>
-            _httpClientFactory = httpClientFactory;
-
-        
-        [HttpGet]
-        public async Task<ActionResult> OnGet(string lat, string longt)
-        {
-            string apiKey = "bef904c9d4916fca8184a376a9534a49";
-
-            Root? root = new Root();
-
-            var httpRequestMessage = new HttpRequestMessage(
-                HttpMethod.Get, "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=" + apiKey);
-            var httpClient = _httpClientFactory.CreateClient();
-            var httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
-
-            if (httpResponseMessage.IsSuccessStatusCode)
-            {
-                var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
-
-                root = await System.Text.Json.JsonSerializer.DeserializeAsync
-                <Root>(contentStream);
-
-                return View(root);
-            }
-            return null;
-        
-        }*/
     }
 }
