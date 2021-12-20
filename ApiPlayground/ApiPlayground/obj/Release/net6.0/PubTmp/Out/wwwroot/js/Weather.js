@@ -1,6 +1,27 @@
-﻿var x = document.getElementById("Test")
+﻿var x = document.getElementById("Test");
+var link = document.getElementById("WeatherLink")
 
-window.onload = function getLocation() {
+window.onload = navigator.permissions && navigator.permissions.query({ name: 'geolocation' })
+    .then(function (PermissionStatus) {
+        if (PermissionStatus.state == 'granted') {
+            getLocation();
+        } else if (PermissionStatus.state == 'prompt') {
+            myFunction();
+        } else {
+            link.classList.add("disabled");
+        }
+    })
+
+
+    function myFunction() {
+    if (confirm("You must allow location services for this page to work properly")) {
+        getLocation();
+    } else {
+        link.classList.add("disabled")
+    }
+}
+
+function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
@@ -21,9 +42,6 @@ function showPosition(position) {
     //for published version
     request.open("GET", '/ApiPlayground/Weather/StoreCoord?lat=' + latShort + '&longt=' + longShort);
 
-    //for dev version on local host
-    //request.open("GET", '/Weather/GetWeather?lat=' + latShort + '&longt=' + longShort);
-
     //Testing for OnGet method
     //request.open("GET", 'Weather/StoreCoord?lat=' + latShort + '&longt=' + longShort);
 
@@ -34,7 +52,7 @@ function showPosition(position) {
             // Inserting the response from server into an HTML element
             //x.innerHTML = this.responseText;
         } else {
-            x.innerHTML = "THIS DIDNT WORK"
+            //x.innerHTML = "THIS DIDNT WORK"
         }
     };
     request.send();
