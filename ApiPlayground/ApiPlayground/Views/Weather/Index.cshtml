@@ -5,16 +5,35 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Weather</h1>
+
+
 
 
 @if(Model != null)
 {
-    <p>@Model.main.temp celsius</p>
-    <p>Feels like @Model.main.feels_like</p>
-    <p>Wind is blowing with @Model.wind.speed m/s, gusting @Model.wind.gust m/s from @Model.wind.deg degree</p>
+    @foreach(var code in Model.Weather)
+    {
+        <p class=".d-none" id="code">@code.icon</p>
+    }
+    
+
+    <div class="card mx-auto" style="width: 18rem;">
+        <h5 class="mx-auto">Weather for @Model.name</h5>
+        <img class="mx-auto" src="" id="weatherPic" style="width: 5rem;" />
+        <div class="card-body mx-auto">
+            <p class="mx-auto">Temperature is @Model.main.temp</p>
+            <p class="mx-auto">Feels like @Model.main.feels_like</p>
+            <p class="mx-auto">Wind: @Model.wind.speed, gusting: @Model.wind.gust</p>
+            <p class="mx-auto">Wind is coming from @Model.wind.deg</p>
+        </div>
+    </div>
+
 }
 else
 {
     <p>Model is empty</p>
 }
+
+
+<script src="~/js/Card.js" asp-append-version="true"></script>

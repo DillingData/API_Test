@@ -74,7 +74,7 @@ namespace ApiPlayground.Models
         [JsonProperty("coord")]
         public Coordinates coord { get; set; }
         [JsonProperty("weather")]
-        public List<Weather> weather { get; set; }
+        public List<Weather> Weather { get; set; }
         [JsonProperty("@base")]
         public string @base { get; set; }
         [JsonProperty("main")]
