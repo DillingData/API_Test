@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Dv2OvfO9kTybJPt9g5a+UR2J+k5ciN0kiMiCqgM0c70=",
+  "Hash": "L4ksFdghwHQzGa7TjEwZ+XztcI6hFuH14SK434aZj2c=",
   "Source": "ApiPlayground",
   "BasePath": "_content/ApiPlayground",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\GitProjects\\apiplayground\\ApiPlayground\\ApiPlayground\\wwwroot\\js\\Card.js",
+      "SourceId": "ApiPlayground",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GitProjects\\apiplayground\\ApiPlayground\\ApiPlayground\\wwwroot\\",
+      "BasePath": "_content/ApiPlayground",
+      "RelativePath": "js/Card.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Card.js"
     },
     {
       "Identity": "C:\\GitProjects\\apiplayground\\ApiPlayground\\ApiPlayground\\wwwroot\\js\\site.js",

@@ -42,7 +42,7 @@ function showPosition(position) {
     //for published version
     request.open("GET", '/ApiPlayground/Weather/StoreCoord?lat=' + latShort + '&longt=' + longShort);
 
-    //Testing for OnGet method
+    //For developer version
     //request.open("GET", 'Weather/StoreCoord?lat=' + latShort + '&longt=' + longShort);
 
 

@@ -5,20 +5,26 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Weather</h1>
-
-
+<style>
+    #card {
+        width: 18rem;
+        border-radius: 25px;
+    }
+    #code {
+        display: hidden;
+    }
+</style>
 
 
 @if(Model != null)
 {
     @foreach(var code in Model.Weather)
     {
-        <p class=".d-none" id="code">@code.icon</p>
+        <p id="code">@code.icon</p>
     }
     
 
-    <div class="card mx-auto" style="width: 18rem;">
+    <div class="card mx-auto" id="card">
         <h5 class="mx-auto">Weather for @Model.name</h5>
         <img class="mx-auto" src="" id="weatherPic" style="width: 5rem;" />
         <div class="card-body mx-auto">
