@@ -22,15 +22,16 @@
     {
         <p id="code">@code.icon</p>
     }
-    
+    <div class="mx-auto">
+        <h1>Weather for @Model.name</h1>
+    </div>
 
     <div class="card mx-auto" id="card">
-        <h5 class="mx-auto">Weather for @Model.name</h5>
         <img class="mx-auto" src="" id="weatherPic" style="width: 5rem;" />
         <div class="card-body mx-auto">
             <p class="mx-auto">Temperature is @Model.main.temp</p>
             <p class="mx-auto">Feels like @Model.main.feels_like</p>
-            <p class="mx-auto">Wind: @Model.wind.speed, gusting: @Model.wind.gust</p>
+            <p class="mx-auto">Wind: @Model.wind.speed m/s, gusting: @Model.wind.gust m/s</p>
             <p class="mx-auto">Wind is coming from @Model.wind.deg</p>
         </div>
     </div>
