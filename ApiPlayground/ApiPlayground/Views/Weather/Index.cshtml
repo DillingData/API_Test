@@ -11,28 +11,29 @@
         border-radius: 25px;
     }
     #code {
-        display: hidden;
+        /*display: hidden;*/
+        visibility: hidden;
     }
 </style>
 
 
 @if(Model != null)
 {
-    @foreach(var code in Model.Weather)
+    @foreach(var code in Model.current.weather)
     {
         <p id="code">@code.icon</p>
     }
     <div class="mx-auto">
-        <h1>Weather for @Model.name</h1>
+        <h1 class="mx-auto">Weather for your location</h1>
     </div>
 
     <div class="card mx-auto" id="card">
         <img class="mx-auto" src="" id="weatherPic" style="width: 5rem;" />
         <div class="card-body mx-auto">
-            <p class="mx-auto">Temperature is @Model.main.temp</p>
-            <p class="mx-auto">Feels like @Model.main.feels_like</p>
-            <p class="mx-auto">Wind: @Model.wind.speed m/s, gusting: @Model.wind.gust m/s</p>
-            <p class="mx-auto">Wind is coming from @Model.wind.deg</p>
+            <p class="mx-auto">Temperature is @Model.current.temp</p>
+            <p class="mx-auto">Feels like @Model.current.feels_like</p>
+            <p class="mx-auto">Wind: @Model.current.wind_speed m/s, gusting: @Model.current.wind_gust m/s</p>
+            <p class="mx-auto">Wind is coming from @Model.current.wind_deg</p>
         </div>
     </div>
 
@@ -41,6 +42,5 @@ else
 {
     <p>Model is empty</p>
 }
-
 
 <script src="~/js/Card.js" asp-append-version="true"></script>

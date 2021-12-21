@@ -18,20 +18,29 @@ namespace ApiPlayground.Controllers
             var lat = HttpContext.Session.GetString("LAT");
             var longt = HttpContext.Session.GetString("LONGT");
 
-            string apiKey = "bef904c9d4916fca8184a376a9534a49";
+            if(lat == null)
+            {
+                //something
+            }
+            else
+            {
+                string apiKey = "bef904c9d4916fca8184a376a9534a49";
 
-            var requestURI = string.Format("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&units=metric&appid=" + apiKey);
-            var request = WebRequest.Create(requestURI);
-            var response = request.GetResponse();
+                //Request for current weather API
+                //var requestURI = string.Format("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&units=metric&appid=" + apiKey);
 
-            Stream stream = response.GetResponseStream();
-            Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
-            StreamReader readstream = new StreamReader(stream, encode);
-            string s = readstream.ReadToEnd();
+                //Request for OneCallAPI
+                var requestURI = string.Format("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + longt + "&exclude={part}&appid=" + apiKey);
+                var request = WebRequest.Create(requestURI);
+                var response = request.GetResponse();
 
-            root = JsonConvert.DeserializeObject<Root>(s);
-            
+                Stream stream = response.GetResponseStream();
+                Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
+                StreamReader readstream = new StreamReader(stream, encode);
+                string s = readstream.ReadToEnd();
 
+                root = JsonConvert.DeserializeObject<Root>(s);
+            }
             return View(root);
         }
 
