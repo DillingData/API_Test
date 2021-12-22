@@ -10,8 +10,11 @@
         width: 25rem;
         border-radius: 25px;
     }
+    #card2 {
+        width: 40rem;
+        border-radius: 25px;
+    }
     #code {
-        /*display: hidden;*/
         visibility: hidden;
     }
 </style>
@@ -24,15 +27,34 @@
     }
 
     <div class="card mx-auto" id="card">
-        <h4 class="mx-auto">Weather for your location<br /></h4>
-        <img class="mx-auto" src="" id="weatherPic" style="width: 5rem;" />
+        <div class="card-header">
+            <h4 class="mx-auto">Weather for your location<br /></h4>
+        </div>
         <div class="card-body mx-auto">
+            <img class="mx-auto" src="" id="weatherPic" style="width: 5rem;" />
             <p class="mx-auto">Temperature is @Model.current.temp°</p>
             <p class="mx-auto">Feels like @Model.current.feels_like°</p>
             <p class="mx-auto">Wind: @Model.current.wind_speed m/s, gusting: @Model.current.wind_gust m/s</p>
             <p class="mx-auto">Wind is coming from @Model.current.wind_deg°</p>
         </div>
     </div>
+    <p><br /></p>
+
+    <div class="card mx-auto" id="card2">
+        <div class="card-header">
+            <h4>Weather for the next 8 days</h4>
+        </div>
+        <div class="card-body">
+            @foreach(var daily in Model.daily)
+            {
+
+                <p>temp morning = @daily.temp.morn, temp daytime = @daily.temp.day, wind = @daily.wind_speed m/s gusting @daily.wind_gust m/s from @daily.wind_deg</p>
+                <p></p>
+            }
+        </div>
+    </div>
+
+
 }
 else
 {
