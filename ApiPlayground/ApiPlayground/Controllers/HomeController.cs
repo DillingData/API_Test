@@ -13,10 +13,8 @@ namespace ApiPlayground.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(string lat, string longt)
+        public IActionResult Index()
         {
-
-
             return View();
         }
 

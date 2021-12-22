@@ -16,31 +16,35 @@ namespace ApiPlayground.Controllers
 
             Root? root = new Root();
 
+            //string lat = null;
             var lat = HttpContext.Session.GetString("LAT");
             var longt = HttpContext.Session.GetString("LONGT");
 
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
 
-            Debug.WriteLine(lat);
-            Debug.WriteLine(longt);
-            Debug.WriteLine(apiKey);
+            if(lat == null)
+            {
+                //do error handling
+                return RedirectToAction("LocationError", "Error");
+            } else
+            {
+                //Request for current weather API
+                //var requestURI = string.Format("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&units=metric&appid=" + apiKey);
 
-            //Request for current weather API
-            //var requestURI = string.Format("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&units=metric&appid=" + apiKey);
+                //Request for OneCallAPI
+                var requestURI = string.Format("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + longt + "&units=metric&appid=" + apiKey);
+                var request = WebRequest.Create(requestURI);
+                var response = request.GetResponse();
 
-            //Request for OneCallAPI
-            var requestURI = string.Format("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + longt + "&units=metric&appid=" + apiKey);
-            var request = WebRequest.Create(requestURI);
-            var response = request.GetResponse();
+                Stream stream = response.GetResponseStream();
+                Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
+                StreamReader readstream = new StreamReader(stream, encode);
+                string s = readstream.ReadToEnd();
 
-            Stream stream = response.GetResponseStream();
-            Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
-            StreamReader readstream = new StreamReader(stream, encode);
-            string s = readstream.ReadToEnd();
+                root = JsonConvert.DeserializeObject<Root>(s);
 
-            root = JsonConvert.DeserializeObject<Root>(s);
-            
-            return View(root);
+                return View(root);
+            }
         }
 
         public void StoreCoord(string lat, string longt)
