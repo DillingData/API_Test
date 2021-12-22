@@ -8,5 +8,10 @@ namespace ApiPlayground.Controllers
         {
             return View();
         }
+        
+        public IActionResult APIError()
+        {
+            return View();
+        }
     }
 }

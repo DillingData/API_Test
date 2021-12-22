@@ -7,7 +7,7 @@
 
 <style>
     #card {
-        width: 18rem;
+        width: 25rem;
         border-radius: 25px;
     }
     #code {
@@ -22,17 +22,15 @@
     {
         <p id="code">@code.icon</p>
     }
-    <div class="mx-auto">
-        <h1 class="mx-auto">Weather for your location</h1>
-    </div>
 
     <div class="card mx-auto" id="card">
+        <h4 class="mx-auto">Weather for your location<br /></h4>
         <img class="mx-auto" src="" id="weatherPic" style="width: 5rem;" />
         <div class="card-body mx-auto">
-            <p class="mx-auto">Temperature is @Model.current.temp</p>
-            <p class="mx-auto">Feels like @Model.current.feels_like</p>
+            <p class="mx-auto">Temperature is @Model.current.temp°</p>
+            <p class="mx-auto">Feels like @Model.current.feels_like°</p>
             <p class="mx-auto">Wind: @Model.current.wind_speed m/s, gusting: @Model.current.wind_gust m/s</p>
-            <p class="mx-auto">Wind is coming from @Model.current.wind_deg</p>
+            <p class="mx-auto">Wind is coming from @Model.current.wind_deg°</p>
         </div>
     </div>
 }

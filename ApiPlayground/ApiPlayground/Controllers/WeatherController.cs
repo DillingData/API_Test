@@ -28,22 +28,27 @@ namespace ApiPlayground.Controllers
                 return RedirectToAction("LocationError", "Error");
             } else
             {
-                //Request for current weather API
-                //var requestURI = string.Format("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&units=metric&appid=" + apiKey);
+                try
+                {
+                    //Request for OneCallAPI
+                    var requestURI = string.Format("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + longt + "&units=metric&appid=" + apiKey);
+                    var request = WebRequest.Create(requestURI);
+                    var response = request.GetResponse();
 
-                //Request for OneCallAPI
-                var requestURI = string.Format("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + longt + "&units=metric&appid=" + apiKey);
-                var request = WebRequest.Create(requestURI);
-                var response = request.GetResponse();
+                    Stream stream = response.GetResponseStream();
+                    Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
+                    StreamReader readstream = new StreamReader(stream, encode);
+                    string s = readstream.ReadToEnd();
 
-                Stream stream = response.GetResponseStream();
-                Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
-                StreamReader readstream = new StreamReader(stream, encode);
-                string s = readstream.ReadToEnd();
+                    root = JsonConvert.DeserializeObject<Root>(s);
 
-                root = JsonConvert.DeserializeObject<Root>(s);
+                    return View(root);
+                }
+                catch
+                {
+                    return RedirectToAction("APIError", "Error");
+                }
 
-                return View(root);
             }
         }
 
