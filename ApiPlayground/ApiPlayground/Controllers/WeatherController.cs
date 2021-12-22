@@ -22,9 +22,8 @@ namespace ApiPlayground.Controllers
 
             string apiKey = "bef904c9d4916fca8184a376a9534a49";
 
-            if(lat == null)
+            if(lat == null || longt == null)
             {
-                //do error handling
                 return RedirectToAction("LocationError", "Error");
             } else
             {
@@ -40,9 +39,17 @@ namespace ApiPlayground.Controllers
                     StreamReader readstream = new StreamReader(stream, encode);
                     string s = readstream.ReadToEnd();
 
-                    root = JsonConvert.DeserializeObject<Root>(s);
+                    try
+                    {
+                        root = JsonConvert.DeserializeObject<Root>(s);
 
-                    return View(root);
+                        return View(root);
+                    }
+                    catch
+                    {
+                        return RedirectToAction("JSONError", "Error");
+                    }
+
                 }
                 catch
                 {

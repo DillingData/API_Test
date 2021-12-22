@@ -13,5 +13,10 @@ namespace ApiPlayground.Controllers
         {
             return View();
         }
+
+        public IActionResult JSONError()
+        {
+            return View();
+        }
     }
 }
