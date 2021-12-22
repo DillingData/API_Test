@@ -7,11 +7,11 @@
 
 <style>
     #card {
-        width: 25rem;
+        width: 22rem;
         border-radius: 25px;
     }
     #card2 {
-        width: 40rem;
+        width: 22rem;
         border-radius: 25px;
     }
     #code {
@@ -47,8 +47,8 @@
         <div class="card-body">
             @foreach(var daily in Model.daily)
             {
-
-                <p>temp morning = @daily.temp.morn, temp daytime = @daily.temp.day, wind = @daily.wind_speed m/s gusting @daily.wind_gust m/s from @daily.wind_deg</p>
+                <p>@DateTime.Now.DayOfWeek</p>
+                <p>temp morning = @daily.temp.morn°, temp daytime = @daily.temp.day°, wind = @daily.wind_speed m/s gusting @daily.wind_gust m/s from @daily.wind_deg</p>
                 <p></p>
             }
         </div>
