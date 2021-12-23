@@ -20,6 +20,12 @@
     #code {
         visibility: hidden;
     }
+    #table {
+        width: 20rem;
+    }
+    tr {
+        padding: 15px;
+    }
 </style>
 
 @if(Model != null)
@@ -47,14 +53,67 @@
         <div class="card-header" id="card-header">
             <h4>Weather for the next 8 days</h4>
         </div>
-        <div class="card-body">
+        <div class="card-header" id="card-header">
+            <h6>Monday</h6>
+        </div>
+        <div>
+            <table id="table">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Temp</th>
+                    <th scope="col">Feels like</th>
+                </tr>
+                <tr>
+                    <th scope="row">Morning</th>
+                    <td>@Model.daily[0].temp.morn</td>
+                    <td>@Model.daily[0].feels_like.morn</td>
+                </tr>
+                <tr>
+                    <th scope="row">Daytime</th>
+                    <th>@Model.daily[0].temp.day</th>
+                    <th>@Model.daily[0].feels_like.day</th>
+                </tr>
+                <tr>
+                    <th scope="row">Evening</th>
+                    <td>@Model.daily[0].temp.day</td>
+                    <td>@Model.daily[0].feels_like.eve</td>
+                </tr>
+                <tr>
+                    <th scope="row">Night</th>
+                    <td>@Model.daily[0].temp.eve</td>
+                    <td>@Model.daily[0].feels_like.night</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-header" id="card-header">
+            <h6>Tuesday</h6>
+        </div>
+        <div class="card-header" id="card-header">
+            <h6>Wednesday</h6>
+        </div>
+        <div class="card-header" id="card-header">
+            <h6>Thursday</h6>
+        </div>
+        <div class="card-header" id="card-header">
+            <h6>Friday</h6>
+        </div>
+        <div class="card-header" id="card-header">
+            <h6>Saturday</h6>
+        </div>
+        <div class="card-header" id="card-header">
+            <h6>Sunday</h6>
+        </div>
+
+
+
+@*        <div class="card-body">
             @foreach(var daily in Model.daily)
             {
                 <p>@DateTime.Now.DayOfWeek</p>
                 <p>temp morning = @daily.temp.morn°, temp daytime = @daily.temp.day°, wind = @daily.wind_speed m/s gusting @daily.wind_gust m/s from @daily.wind_deg</p>
                 <p></p>
             }
-        </div>
+        </div>*@
     </div>
 
 
