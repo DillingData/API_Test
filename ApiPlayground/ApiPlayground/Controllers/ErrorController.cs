@@ -18,5 +18,10 @@ namespace ApiPlayground.Controllers
         {
             return View();
         }
+
+        public IActionResult WeekdayError()
+        {
+            return View();
+        }
     }
 }

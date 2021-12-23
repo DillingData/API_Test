@@ -27,6 +27,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcTG9jYXRpb25FcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/GitProjects/apiplayground/ApiPlayground/ApiPlayground/Views/Error/WeekdayError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcV2Vla2RheUVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/GitProjects/apiplayground/ApiPlayground/ApiPlayground/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

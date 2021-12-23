@@ -2,7 +2,8 @@
 
 namespace ApiPlayground.Models
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
+    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+    
     public class Weather
     {
         [JsonProperty("id")]
@@ -48,15 +49,15 @@ namespace ApiPlayground.Models
         [JsonProperty("weather")]
         public List<Weather> weather { get; set; }
     }
-
+    
     public class Minutely
     {
         [JsonProperty("dt")]
-        public int dt { get; set; }
+        public string dt { get; set; }
         [JsonProperty("precipitation")]
-        public int precipitation { get; set; }
+        public string precipitation { get; set; }
     }
-
+    
     public class Snow
     {
         [JsonProperty("_1h")]

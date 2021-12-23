@@ -37,6 +37,9 @@ function showPosition(position) {
     var latShort = lat.toFixed(2);
     var longShort = longt.toFixed(2);
 
+    //var latShort = lat;
+    //var longShort = longt;
+
     var request = new XMLHttpRequest;
 
     //for published version

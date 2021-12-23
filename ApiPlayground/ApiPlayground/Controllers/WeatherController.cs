@@ -63,7 +63,6 @@ namespace ApiPlayground.Controllers
         {
             HttpContext.Session.SetString("LAT", lat);
             HttpContext.Session.SetString("LONGT", longt);
-            Debug.WriteLine("Data saved in session");
         }
     }
 }
