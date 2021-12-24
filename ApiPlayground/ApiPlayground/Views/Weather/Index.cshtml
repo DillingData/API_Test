@@ -53,55 +53,250 @@
         <div class="card-header" id="card-header">
             <h4>Weather for the next 8 days</h4>
         </div>
-        <div class="card-header" id="card-header">
-            <h6>Monday</h6>
+
+        <div class="card mx-auto" id="card2">
+            <div class="card-header" id="card-header">
+                <h6>Monday</h6>
+            </div>
+            <div class="card-body">
+                <table id="table">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Temp</th>
+                        <th scope="col">Feels like</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Morning</th>
+                        <td>@Model.daily[0].temp.morn</td>
+                        <td>@Model.daily[0].feels_like.morn</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Daytime</th>
+                        <th>@Model.daily[0].temp.day</th>
+                        <th>@Model.daily[0].feels_like.day</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Evening</th>
+                        <td>@Model.daily[0].temp.day</td>
+                        <td>@Model.daily[0].feels_like.eve</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Night</th>
+                        <td>@Model.daily[0].temp.eve</td>
+                        <td>@Model.daily[0].feels_like.night</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div>
-            <table id="table">
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Temp</th>
-                    <th scope="col">Feels like</th>
-                </tr>
-                <tr>
-                    <th scope="row">Morning</th>
-                    <td>@Model.daily[0].temp.morn</td>
-                    <td>@Model.daily[0].feels_like.morn</td>
-                </tr>
-                <tr>
-                    <th scope="row">Daytime</th>
-                    <th>@Model.daily[0].temp.day</th>
-                    <th>@Model.daily[0].feels_like.day</th>
-                </tr>
-                <tr>
-                    <th scope="row">Evening</th>
-                    <td>@Model.daily[0].temp.day</td>
-                    <td>@Model.daily[0].feels_like.eve</td>
-                </tr>
-                <tr>
-                    <th scope="row">Night</th>
-                    <td>@Model.daily[0].temp.eve</td>
-                    <td>@Model.daily[0].feels_like.night</td>
-                </tr>
-            </table>
+
+        <div class="card mx-auto" id="card2">
+            <div class="card-header" id="card-header">
+                <h6>Tuesday</h6>
+            </div>
+            <div class="card-body">
+                <table id="table">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Temp</th>
+                        <th scope="col">Feels like</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Morning</th>
+                        <td>@Model.daily[1].temp.morn</td>
+                        <td>@Model.daily[1].feels_like.morn</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Daytime</th>
+                        <th>@Model.daily[1].temp.day</th>
+                        <th>@Model.daily[1].feels_like.day</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Evening</th>
+                        <td>@Model.daily[1].temp.day</td>
+                        <td>@Model.daily[1].feels_like.eve</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Night</th>
+                        <td>@Model.daily[1].temp.eve</td>
+                        <td>@Model.daily[1].feels_like.night</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="card-header" id="card-header">
-            <h6>Tuesday</h6>
+
+        <div class="card mx-auto" id="card2">
+            <div class="card-header" id="card-header">
+                <h6>Wednesday</h6>
+            </div>
+            <div class="card-body">
+                <table id="table">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Temp</th>
+                        <th scope="col">Feels like</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Morning</th>
+                        <td>@Model.daily[2].temp.morn</td>
+                        <td>@Model.daily[2].feels_like.morn</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Daytime</th>
+                        <th>@Model.daily[2].temp.day</th>
+                        <th>@Model.daily[2].feels_like.day</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Evening</th>
+                        <td>@Model.daily[2].temp.day</td>
+                        <td>@Model.daily[2].feels_like.eve</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Night</th>
+                        <td>@Model.daily[2].temp.eve</td>
+                        <td>@Model.daily[2].feels_like.night</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="card-header" id="card-header">
-            <h6>Wednesday</h6>
+
+        <div class="card mx-auto" id="card2">
+            <div class="card-header" id="card-header">
+                <h6>Thursday</h6>
+            </div>
+            <div class="card-body">
+                <table id="table">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Temp</th>
+                        <th scope="col">Feels like</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Morning</th>
+                        <td>@Model.daily[3].temp.morn</td>
+                        <td>@Model.daily[3].feels_like.morn</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Daytime</th>
+                        <th>@Model.daily[3].temp.day</th>
+                        <th>@Model.daily[3].feels_like.day</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Evening</th>
+                        <td>@Model.daily[3].temp.day</td>
+                        <td>@Model.daily[3].feels_like.eve</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Night</th>
+                        <td>@Model.daily[3].temp.eve</td>
+                        <td>@Model.daily[3].feels_like.night</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="card-header" id="card-header">
-            <h6>Thursday</h6>
+
+        <div class="card mx-auto" id="card2">
+            <div class="card-header" id="card-header">
+                <h6>Friday</h6>
+            </div>
+            <div class="card-body">
+                <table id="table">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Temp</th>
+                        <th scope="col">Feels like</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Morning</th>
+                        <td>@Model.daily[4].temp.morn</td>
+                        <td>@Model.daily[4].feels_like.morn</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Daytime</th>
+                        <th>@Model.daily[4].temp.day</th>
+                        <th>@Model.daily[4].feels_like.day</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Evening</th>
+                        <td>@Model.daily[4].temp.day</td>
+                        <td>@Model.daily[4].feels_like.eve</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Night</th>
+                        <td>@Model.daily[4].temp.eve</td>
+                        <td>@Model.daily[4].feels_like.night</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="card-header" id="card-header">
-            <h6>Friday</h6>
+
+        <div class="card mx-auto" id="card2">
+            <div class="card-header" id="card-header">
+                <h6>Saturday</h6>
+            </div>
+            <div class="card-body">
+                <table id="table">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Temp</th>
+                        <th scope="col">Feels like</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Morning</th>
+                        <td>@Model.daily[5].temp.morn</td>
+                        <td>@Model.daily[5].feels_like.morn</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Daytime</th>
+                        <th>@Model.daily[5].temp.day</th>
+                        <th>@Model.daily[5].feels_like.day</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Evening</th>
+                        <td>@Model.daily[5].temp.day</td>
+                        <td>@Model.daily[5].feels_like.eve</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Night</th>
+                        <td>@Model.daily[5].temp.eve</td>
+                        <td>@Model.daily[5].feels_like.night</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="card-header" id="card-header">
-            <h6>Saturday</h6>
-        </div>
-        <div class="card-header" id="card-header">
-            <h6>Sunday</h6>
+
+        <div class="card mx-auto" id="card2">
+            <div class="card-header" id="card-header">
+                <h6>Sunday</h6>
+            </div>
+            <div class="card-body">
+                <table id="table">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Temp</th>
+                        <th scope="col">Feels like</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Morning</th>
+                        <td>@Model.daily[6].temp.morn</td>
+                        <td>@Model.daily[6].feels_like.morn</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Daytime</th>
+                        <th>@Model.daily[6].temp.day</th>
+                        <th>@Model.daily[6].feels_like.day</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Evening</th>
+                        <td>@Model.daily[6].temp.day</td>
+                        <td>@Model.daily[6].feels_like.eve</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Night</th>
+                        <td>@Model.daily[6].temp.eve</td>
+                        <td>@Model.daily[6].feels_like.night</td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
 
