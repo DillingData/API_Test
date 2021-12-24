@@ -19,31 +19,31 @@ namespace ApiPlayground.Models
     public class Current
     {
         [JsonProperty("dt")]
-        public int dt { get; set; }
+        public string dt { get; set; }
         [JsonProperty("sunrise")]
-        public int sunrise { get; set; }
+        public string sunrise { get; set; }
         [JsonProperty("sunset")]
-        public int sunset { get; set; }
+        public string sunset { get; set; }
         [JsonProperty("temp")]
         public double temp { get; set; }
         [JsonProperty("feels_like")]
         public double feels_like { get; set; }
         [JsonProperty("pressure")]
-        public int pressure { get; set; }
+        public string pressure { get; set; }
         [JsonProperty("humidity")]
-        public int humidity { get; set; }
+        public string humidity { get; set; }
         [JsonProperty("dew_point")]
         public double dew_point { get; set; }
         [JsonProperty("uvi")]
-        public int uvi { get; set; }
+        public string uvi { get; set; }
         [JsonProperty("clouds")]
-        public int clouds { get; set; }
+        public string clouds { get; set; }
         [JsonProperty("visibility")]
-        public int visibility { get; set; }
+        public string visibility { get; set; }
         [JsonProperty("wind_speed")]
         public double wind_speed { get; set; }
         [JsonProperty("wind_deg")]
-        public int wind_deg { get; set; }
+        public string wind_deg { get; set; }
         [JsonProperty("wind_gust")]
         public double wind_gust { get; set; }
         [JsonProperty("weather")]
@@ -67,27 +67,27 @@ namespace ApiPlayground.Models
     public class Hourly
     {
         [JsonProperty("dt")]
-        public int dt { get; set; }
+        public string dt { get; set; }
         [JsonProperty("temp")]
         public double temp { get; set; }
         [JsonProperty("feel_like")]
         public double feels_like { get; set; }
         [JsonProperty("pressure")]
-        public int pressure { get; set; }
+        public string pressure { get; set; }
         [JsonProperty("humidity")]
-        public int humidity { get; set; }
+        public string humidity { get; set; }
         [JsonProperty("dew_point")]
         public double dew_point { get; set; }
         [JsonProperty("uvi")]
         public double uvi { get; set; }
         [JsonProperty("clouds")]
-        public int clouds { get; set; }
+        public string clouds { get; set; }
         [JsonProperty("visibility")]
-        public int visibility { get; set; }
+        public string visibility { get; set; }
         [JsonProperty("wind_speed")]
         public double wind_speed { get; set; }
         [JsonProperty("wind_deg")]
-        public int wind_deg { get; set; }
+        public string wind_deg { get; set; }
         [JsonProperty("wind_gues")]
         public double wind_gust { get; set; }
         [JsonProperty("weather")]
@@ -129,15 +129,15 @@ namespace ApiPlayground.Models
     public class Daily
     {
         [JsonProperty("dt")]
-        public int dt { get; set; }
+        public string dt { get; set; }
         [JsonProperty("sunrise")]
-        public int sunrise { get; set; }
+        public string sunrise { get; set; }
         [JsonProperty("sunset")]
-        public int sunset { get; set; }
+        public string sunset { get; set; }
         [JsonProperty("moonrise")]
-        public int moonrise { get; set; }
+        public string moonrise { get; set; }
         [JsonProperty("moonset")]
-        public int moonset { get; set; }
+        public string moonset { get; set; }
         [JsonProperty("moon_phase")]
         public double moon_phase { get; set; }
         [JsonProperty("temp")]
@@ -145,21 +145,21 @@ namespace ApiPlayground.Models
         [JsonProperty("feels_like")]
         public FeelsLike feels_like { get; set; }
         [JsonProperty("pressure")]
-        public int pressure { get; set; }
+        public string pressure { get; set; }
         [JsonProperty("humidity")]
-        public int humidity { get; set; }
+        public string humidity { get; set; }
         [JsonProperty("dew_point")]
         public double dew_point { get; set; }
         [JsonProperty("wind_speed")]
         public double wind_speed { get; set; }
         [JsonProperty("wind_deg")]
-        public int wind_deg { get; set; }
+        public string wind_deg { get; set; }
         [JsonProperty("wind_gust")]
         public double wind_gust { get; set; }
         [JsonProperty("weather")]
         public List<Weather> weather { get; set; }
         [JsonProperty("clouds")]
-        public int clouds { get; set; }
+        public string clouds { get; set; }
         [JsonProperty("pop")]
         public double pop { get; set; }
         [JsonProperty("snow")]
@@ -177,7 +177,7 @@ namespace ApiPlayground.Models
         [JsonProperty("timezone")]
         public string timezone { get; set; }
         [JsonProperty("timezone_offset")]
-        public int timezone_offset { get; set; }
+        public string timezone_offset { get; set; }
         [JsonProperty("current")]
         public Current current { get; set; }
         [JsonProperty("minutely")]
