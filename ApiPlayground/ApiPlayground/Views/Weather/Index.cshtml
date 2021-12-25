@@ -2,7 +2,7 @@
 
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Weather";
 }
 
 <style>
@@ -25,6 +25,27 @@
     }
     tr {
         padding: 15px;
+    }
+    #body1{
+        display: none;
+    }
+    #body2{
+        display: none;
+    }
+    #body3{
+        display: none;
+    }
+    #body4{
+        display: none;
+    }
+    #body5{
+        display: none;
+    }
+    #body6{
+        display: none;
+    }
+    #body7{
+        display: none;
     }
 </style>
 
@@ -51,14 +72,15 @@
 
     <div class="card mx-auto" id="card2">
         <div class="card-header" id="card-header">
-            <h4>Weather for the next 8 days</h4>
+            <h4>Weather for the next 7 days</h4>
         </div>
-
+    </div>
+    <div class="card mx-auto" id=card2>
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Monday</h6>
             </div>
-            <div class="card-body">
+            <div class="card-body" id="body1">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
@@ -88,12 +110,13 @@
                 </table>
             </div>
         </div>
-
+    </div>
+    <div class="card mx-auto" id=card2>
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Tuesday</h6>
             </div>
-            <div class="card-body">
+            <div class="card-body" id="body2">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
@@ -123,12 +146,13 @@
                 </table>
             </div>
         </div>
-
+    </div>
+    <div class="card mx-auto" id=card2>
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Wednesday</h6>
             </div>
-            <div class="card-body">
+            <div class="card-body" id="body3">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
@@ -158,12 +182,13 @@
                 </table>
             </div>
         </div>
-
+    </div>
+    <div class="card mx-auto" id=card2>
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Thursday</h6>
             </div>
-            <div class="card-body">
+            <div class="card-body" id="body4">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
@@ -193,12 +218,13 @@
                 </table>
             </div>
         </div>
-
+    </div>
+    <div class="card mx-auto" id=card2>
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Friday</h6>
             </div>
-            <div class="card-body">
+            <div class="card-body" id="body5">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
@@ -228,12 +254,13 @@
                 </table>
             </div>
         </div>
-
+    </div>
+    <div class="card mx-auto" id=card2>
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Saturday</h6>
             </div>
-            <div class="card-body">
+            <div class="card-body" id="body6">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
@@ -263,12 +290,13 @@
                 </table>
             </div>
         </div>
-
+    </div>
+    <div class="card mx-auto" id=card2>
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Sunday</h6>
             </div>
-            <div class="card-body">
+            <div class="card-body" id="body7">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
@@ -298,20 +326,7 @@
                 </table>
             </div>
         </div>
-
-
-
-@*        <div class="card-body">
-            @foreach(var daily in Model.daily)
-            {
-                <p>@DateTime.Now.DayOfWeek</p>
-                <p>temp morning = @daily.temp.morn°, temp daytime = @daily.temp.day°, wind = @daily.wind_speed m/s gusting @daily.wind_gust m/s from @daily.wind_deg</p>
-                <p></p>
-            }
-        </div>*@
     </div>
-
-
 }
 else
 {

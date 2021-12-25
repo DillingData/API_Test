@@ -13,7 +13,6 @@ namespace ApiPlayground.Controllers
     {
         public IActionResult Index()
         {
-
             Root? root = new Root();
 
             //string lat = null;
@@ -49,7 +48,6 @@ namespace ApiPlayground.Controllers
                     {
                         return RedirectToAction("JSONError", "Error");
                     }
-
                 }
                 catch
                 {
