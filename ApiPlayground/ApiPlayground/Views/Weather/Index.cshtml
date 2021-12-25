@@ -67,6 +67,9 @@
             <p class="mx-auto">Wind: @Model.current.wind_speed m/s, gusting: @Model.current.wind_gust m/s</p>
             <p class="mx-auto">Wind is coming from @Model.current.wind_deg°</p>
         </div>
+        <div class="card-footer">
+            <p>Weather data provided by OpenWeatherMap</p>
+        </div>
     </div>
     <p><br /></p>
 
@@ -75,7 +78,7 @@
             <h4>Weather for the next 7 days</h4>
         </div>
     </div>
-    <div class="card mx-auto" id=card2>
+    <div class="card mx-auto" id=card2 onclick="onclickday1()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Monday</h6>
@@ -111,7 +114,7 @@
             </div>
         </div>
     </div>
-    <div class="card mx-auto" id=card2>
+    <div class="card mx-auto" id=card2 onclick="onclickday2()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Tuesday</h6>
@@ -147,7 +150,7 @@
             </div>
         </div>
     </div>
-    <div class="card mx-auto" id=card2>
+    <div class="card mx-auto" id=card2 onclick="onclickday3()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Wednesday</h6>
@@ -183,7 +186,7 @@
             </div>
         </div>
     </div>
-    <div class="card mx-auto" id=card2>
+    <div class="card mx-auto" id=card2 onclick="onclickday4()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Thursday</h6>
@@ -219,7 +222,7 @@
             </div>
         </div>
     </div>
-    <div class="card mx-auto" id=card2>
+    <div class="card mx-auto" id=card2 onclick="onclickday5()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Friday</h6>
@@ -255,7 +258,7 @@
             </div>
         </div>
     </div>
-    <div class="card mx-auto" id=card2>
+    <div class="card mx-auto" id=card2 onclick="onclickday6()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Saturday</h6>
@@ -291,7 +294,7 @@
             </div>
         </div>
     </div>
-    <div class="card mx-auto" id=card2>
+    <div class="card mx-auto" id=card2 onclick="onclickday7()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
                 <h6>Sunday</h6>
