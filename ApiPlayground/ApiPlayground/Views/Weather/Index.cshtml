@@ -81,7 +81,7 @@
     <div class="card mx-auto" id=card2 onclick="onclickday1()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6>Monday</h6>
+                <h6 id="day1">Monday - @Model.daily[0].temp.day°</h6>
             </div>
             <div class="card-body" id="body1">
                 <table id="table">
@@ -92,23 +92,23 @@
                     </tr>
                     <tr>
                         <th scope="row">Morning</th>
-                        <td>@Model.daily[0].temp.morn</td>
-                        <td>@Model.daily[0].feels_like.morn</td>
+                        <td>@Model.daily[0].temp.morn°</td>
+                        <td>@Model.daily[0].feels_like.morn°</td>
                     </tr>
                     <tr>
                         <th scope="row">Daytime</th>
-                        <td>@Model.daily[0].temp.day</td>
-                        <td>@Model.daily[0].feels_like.day</td>
+                        <td>@Model.daily[0].temp.day°</td>
+                        <td>@Model.daily[0].feels_like.day°</td>
                     </tr>
                     <tr>
                         <th scope="row">Evening</th>
-                        <td>@Model.daily[0].temp.day</td>
-                        <td>@Model.daily[0].feels_like.eve</td>
+                        <td>@Model.daily[0].temp.day°</td>
+                        <td>@Model.daily[0].feels_like.eve°</td>
                     </tr>
                     <tr>
                         <th scope="row">Night</th>
-                        <td>@Model.daily[0].temp.eve</td>
-                        <td>@Model.daily[0].feels_like.night</td>
+                        <td>@Model.daily[0].temp.eve°</td>
+                        <td>@Model.daily[0].feels_like.night°</td>
                     </tr>
                 </table>
             </div>
@@ -117,7 +117,7 @@
     <div class="card mx-auto" id=card2 onclick="onclickday2()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6>Tuesday</h6>
+                <h6 id="day2">Tuesday</h6>
             </div>
             <div class="card-body" id="body2">
                 <table id="table">
@@ -128,23 +128,23 @@
                     </tr>
                     <tr>
                         <th scope="row">Morning</th>
-                        <td>@Model.daily[1].temp.morn</td>
-                        <td>@Model.daily[1].feels_like.morn</td>
+                        <td>@Model.daily[1].temp.morn°</td>
+                        <td>@Model.daily[1].feels_like.morn°</td>
                     </tr>
                     <tr>
                         <th scope="row">Daytime</th>
-                        <td>@Model.daily[1].temp.day</td>
-                        <td>@Model.daily[1].feels_like.day</td>
+                        <td>@Model.daily[1].temp.day°</td>
+                        <td>@Model.daily[1].feels_like.day°</td>
                     </tr>
                     <tr>
                         <th scope="row">Evening</th>
-                        <td>@Model.daily[1].temp.day</td>
-                        <td>@Model.daily[1].feels_like.eve</td>
+                        <td>@Model.daily[1].temp.day°</td>
+                        <td>@Model.daily[1].feels_like.eve°</td>
                     </tr>
                     <tr>
                         <th scope="row">Night</th>
-                        <td>@Model.daily[1].temp.eve</td>
-                        <td>@Model.daily[1].feels_like.night</td>
+                        <td>@Model.daily[1].temp.eve°</td>
+                        <td>@Model.daily[1].feels_like.night°</td>
                     </tr>
                 </table>
             </div>
@@ -153,7 +153,7 @@
     <div class="card mx-auto" id=card2 onclick="onclickday3()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6>Wednesday</h6>
+                <h6 id="day3">Wednesday</h6>
             </div>
             <div class="card-body" id="body3">
                 <table id="table">
@@ -164,23 +164,23 @@
                     </tr>
                     <tr>
                         <th scope="row">Morning</th>
-                        <td>@Model.daily[2].temp.morn</td>
-                        <td>@Model.daily[2].feels_like.morn</td>
+                        <td>@Model.daily[2].temp.morn°</td>
+                        <td>@Model.daily[2].feels_like.morn°</td>
                     </tr>
                     <tr>
                         <th scope="row">Daytime</th>
-                        <td>@Model.daily[2].temp.day</td>
-                        <td>@Model.daily[2].feels_like.day</td>
+                        <td>@Model.daily[2].temp.day°</td>
+                        <td>@Model.daily[2].feels_like.day°</td>
                     </tr>
                     <tr>
                         <th scope="row">Evening</th>
-                        <td>@Model.daily[2].temp.day</td>
-                        <td>@Model.daily[2].feels_like.eve</td>
+                        <td>@Model.daily[2].temp.day°</td>
+                        <td>@Model.daily[2].feels_like.eve°</td>
                     </tr>
                     <tr>
                         <th scope="row">Night</th>
-                        <td>@Model.daily[2].temp.eve</td>
-                        <td>@Model.daily[2].feels_like.night</td>
+                        <td>@Model.daily[2].temp.eve°</td>
+                        <td>@Model.daily[2].feels_like.night°</td>
                     </tr>
                 </table>
             </div>
@@ -189,7 +189,7 @@
     <div class="card mx-auto" id=card2 onclick="onclickday4()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6>Thursday</h6>
+                <h6 id="day4">Thursday</h6>
             </div>
             <div class="card-body" id="body4">
                 <table id="table">
@@ -200,23 +200,23 @@
                     </tr>
                     <tr>
                         <th scope="row">Morning</th>
-                        <td>@Model.daily[3].temp.morn</td>
-                        <td>@Model.daily[3].feels_like.morn</td>
+                        <td>@Model.daily[3].temp.morn°</td>
+                        <td>@Model.daily[3].feels_like.morn°</td>
                     </tr>
                     <tr>
                         <th scope="row">Daytime</th>
-                        <td>@Model.daily[3].temp.day</td>
-                        <td>@Model.daily[3].feels_like.day</td>
+                        <td>@Model.daily[3].temp.day°</td>
+                        <td>@Model.daily[3].feels_like.day°</td>
                     </tr>
                     <tr>
                         <th scope="row">Evening</th>
-                        <td>@Model.daily[3].temp.day</td>
-                        <td>@Model.daily[3].feels_like.eve</td>
+                        <td>@Model.daily[3].temp.day°</td>
+                        <td>@Model.daily[3].feels_like.eve°</td>
                     </tr>
                     <tr>
                         <th scope="row">Night</th>
-                        <td>@Model.daily[3].temp.eve</td>
-                        <td>@Model.daily[3].feels_like.night</td>
+                        <td>@Model.daily[3].temp.eve°</td>
+                        <td>@Model.daily[3].feels_like.night°</td>
                     </tr>
                 </table>
             </div>
@@ -225,7 +225,7 @@
     <div class="card mx-auto" id=card2 onclick="onclickday5()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6>Friday</h6>
+                <h6 id="day5">Friday</h6>
             </div>
             <div class="card-body" id="body5">
                 <table id="table">
@@ -236,23 +236,23 @@
                     </tr>
                     <tr>
                         <th scope="row">Morning</th>
-                        <td>@Model.daily[4].temp.morn</td>
-                        <td>@Model.daily[4].feels_like.morn</td>
+                        <td>@Model.daily[4].temp.morn°</td>
+                        <td>@Model.daily[4].feels_like.morn°</td>
                     </tr>
                     <tr>
                         <th scope="row">Daytime</th>
-                        <td>@Model.daily[4].temp.day</td>
-                        <td>@Model.daily[4].feels_like.day</td>
+                        <td>@Model.daily[4].temp.day°</td>
+                        <td>@Model.daily[4].feels_like.day°</td>
                     </tr>
                     <tr>
                         <th scope="row">Evening</th>
-                        <td>@Model.daily[4].temp.day</td>
-                        <td>@Model.daily[4].feels_like.eve</td>
+                        <td>@Model.daily[4].temp.day°</td>
+                        <td>@Model.daily[4].feels_like.eve°</td>
                     </tr>
                     <tr>
                         <th scope="row">Night</th>
-                        <td>@Model.daily[4].temp.eve</td>
-                        <td>@Model.daily[4].feels_like.night</td>
+                        <td>@Model.daily[4].temp.eve°</td>
+                        <td>@Model.daily[4].feels_like.night°</td>
                     </tr>
                 </table>
             </div>
@@ -261,7 +261,7 @@
     <div class="card mx-auto" id=card2 onclick="onclickday6()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6>Saturday</h6>
+                <h6 id="day6">Saturday</h6>
             </div>
             <div class="card-body" id="body6">
                 <table id="table">
@@ -272,23 +272,23 @@
                     </tr>
                     <tr>
                         <th scope="row">Morning</th>
-                        <td>@Model.daily[5].temp.morn</td>
-                        <td>@Model.daily[5].feels_like.morn</td>
+                        <td>@Model.daily[5].temp.morn°</td>
+                        <td>@Model.daily[5].feels_like.morn°</td>
                     </tr>
                     <tr>
                         <th scope="row">Daytime</th>
-                        <td>@Model.daily[5].temp.day</td>
-                        <td>@Model.daily[5].feels_like.day</td>
+                        <td>@Model.daily[5].temp.day°</td>
+                        <td>@Model.daily[5].feels_like.day°</td>
                     </tr>
                     <tr>
                         <th scope="row">Evening</th>
-                        <td>@Model.daily[5].temp.day</td>
-                        <td>@Model.daily[5].feels_like.eve</td>
+                        <td>@Model.daily[5].temp.day°</td>
+                        <td>@Model.daily[5].feels_like.eve°</td>
                     </tr>
                     <tr>
                         <th scope="row">Night</th>
-                        <td>@Model.daily[5].temp.eve</td>
-                        <td>@Model.daily[5].feels_like.night</td>
+                        <td>@Model.daily[5].temp.eve°</td>
+                        <td>@Model.daily[5].feels_like.night°</td>
                     </tr>
                 </table>
             </div>
@@ -297,7 +297,7 @@
     <div class="card mx-auto" id=card2 onclick="onclickday7()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6>Sunday</h6>
+                <h6 id="day7">Sunday</h6>
             </div>
             <div class="card-body" id="body7">
                 <table id="table">
@@ -308,23 +308,23 @@
                     </tr>
                     <tr>
                         <th scope="row">Morning</th>
-                        <td>@Model.daily[6].temp.morn</td>
-                        <td>@Model.daily[6].feels_like.morn</td>
+                        <td>@Model.daily[6].temp.morn°</td>
+                        <td>@Model.daily[6].feels_like.morn°</td>
                     </tr>
                     <tr>
                         <th scope="row">Daytime</th>
-                        <td>@Model.daily[6].temp.day</td>
-                        <td>@Model.daily[6].feels_like.day</td>
+                        <td>@Model.daily[6].temp.day°</td>
+                        <td>@Model.daily[6].feels_like.day°</td>
                     </tr>
                     <tr>
                         <th scope="row">Evening</th>
-                        <td>@Model.daily[6].temp.day</td>
-                        <td>@Model.daily[6].feels_like.eve</td>
+                        <td>@Model.daily[6].temp.day°</td>
+                        <td>@Model.daily[6].feels_like.eve°</td>
                     </tr>
                     <tr>
                         <th scope="row">Night</th>
-                        <td>@Model.daily[6].temp.eve</td>
-                        <td>@Model.daily[6].feels_like.night</td>
+                        <td>@Model.daily[6].temp.eve°</td>
+                        <td>@Model.daily[6].feels_like.night°</td>
                     </tr>
                 </table>
             </div>
