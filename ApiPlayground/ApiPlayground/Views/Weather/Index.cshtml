@@ -66,7 +66,14 @@
             <p class="mx-auto">Feels like @Math.Round(Model.current.feels_like)°</p>
             <p class="mx-auto">Wind: @Math.Round(Model.current.wind_speed) m/s, gusting: @Math.Round(Model.current.wind_gust) m/s</p>
             <p class="mx-auto">Wind is coming from @Model.current.wind_deg°</p>
-            <p class="mx-auto">For the next hour it will rain @Math.Round(@Model.hourly[0].rain._1h) mm</p>
+            @try
+             {
+                 <p>It will rain @Model.hourly[0].rain._1h mm for the next hour</p>
+             }
+             catch
+             {
+                 <p>It will not rain for the next hour</p>
+             }
         </div>
         <div class="card-footer">
             <p>Weather data provided by OpenWeatherMap</p>
