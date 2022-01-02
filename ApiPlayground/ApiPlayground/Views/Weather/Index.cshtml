@@ -66,6 +66,7 @@
             <p class="mx-auto">Feels like @Math.Round(Model.current.feels_like)°</p>
             <p class="mx-auto">Wind: @Math.Round(Model.current.wind_speed) m/s, gusting: @Math.Round(Model.current.wind_gust) m/s</p>
             <p class="mx-auto">Wind is coming from @Model.current.wind_deg°</p>
+            <p class="mx-auto">For the next hour it will rain @Math.Round(@Model.hourly[0].rain._1h) mm</p>
         </div>
         <div class="card-footer">
             <p>Weather data provided by OpenWeatherMap</p>
@@ -81,34 +82,36 @@
     <div class="card mx-auto" id=card2 onclick="onclickday1()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6 id="day1">Monday</h6>
+                <h6 id="day1" style="float: left;">Monday</h6>
+                <h6 style="float: right;">@Math.Round(Model.daily[0].temp.day)°(@Math.Round(Model.daily[0].feels_like.day)°), @Math.Round(Model.daily[0].wind_speed) m/s, @Math.Round(Model.daily[0].rain) mm</h6>
             </div>
             <div class="card-body" id="body1">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">Temp</th>
-                        <th scope="col">Wind</th>
+                        <th scope="col">Morning</th>
+                        <th scope="col">Daytime</th>
+                        <th scope="col">Night</th>
+                        <th scope="col">All day</th>
                     </tr>
                     <tr>
-                        <th scope="row">Morning</th>
-                        <td>@Math.Round(Model.daily[0].temp.morn)°(@Math.Round(Model.daily[0].feels_like.morn))°</td>
-                        <td>@Math.Round(Model.daily[0].wind_speed)°</td>
+                        <th scope="row">Temp</th>
+                        <td>@Math.Round(Model.daily[0].temp.morn)°</td>
+                        <td>@Math.Round(Model.daily[0].temp.day)°</td>
+                        <td>@Math.Round(Model.daily[0].temp.night)°</td>
                     </tr>
                     <tr>
-                        <th scope="row">Daytime</th>
-                        <td>@Math.Round(Model.daily[0].temp.day)°(@Math.Round(Model.daily[0].feels_like.day))°</td>
+                        <th scope="row">Feelslike</th>
+                        <td>@Math.Round(Model.daily[0].feels_like.morn)°</td>
                         <td>@Math.Round(Model.daily[0].feels_like.day)°</td>
+                        <td>@Math.Round(Model.daily[0].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Evening</th>
-                        <td>@Math.Round(Model.daily[0].temp.eve)°(@Math.Round(Model.daily[0].feels_like.eve))°</td>
-                        <td>@Math.Round(Model.daily[0].feels_like.eve)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Night</th>
-                        <td>@Math.Round(Model.daily[0].temp.night)°(@Math.Round(Model.daily[0].feels_like.night))°</td>
-                        <td>@Math.Round(Model.daily[0].feels_like.night)°</td>
+                        <th scope="row">Clouds</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>@Model.daily[0].clouds%</td>
                     </tr>
                 </table>
             </div>
@@ -117,34 +120,36 @@
     <div class="card mx-auto" id=card2 onclick="onclickday2()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6 id="day2">Tuesday</h6>
+                <h6 id="day2" style="float: left;">Tuesday</h6>
+                <h6 style="float: right;">@Math.Round(Model.daily[1].temp.day)°(@Math.Round(Model.daily[1].feels_like.day)°), @Math.Round(Model.daily[1].wind_speed) m/s, @Math.Round(Model.daily[1].rain) mm</h6>
             </div>
             <div class="card-body" id="body2">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">Temp</th>
-                        <th scope="col">Feels like</th>
+                        <th scope="col">Morning</th>
+                        <th scope="col">Daytime</th>
+                        <th scope="col">Night</th>
+                        <th scope="col">All day</th>
                     </tr>
                     <tr>
-                        <th scope="row">Morning</th>
+                        <th scope="row">Temp</th>
                         <td>@Math.Round(Model.daily[1].temp.morn)°</td>
+                        <td>@Math.Round(Model.daily[1].temp.day)°</td>
+                        <td>@Math.Round(Model.daily[1].temp.night)°</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Feelslike</th>
                         <td>@Math.Round(Model.daily[1].feels_like.morn)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Daytime</th>
-                        <td>@Math.Round(Model.daily[1].temp.day)°</td>
                         <td>@Math.Round(Model.daily[1].feels_like.day)°</td>
+                        <td>@Math.Round(Model.daily[1].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Evening</th>
-                        <td>@Math.Round(Model.daily[1].temp.day)°</td>
-                        <td>@Math.Round(Model.daily[1].feels_like.eve)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Night</th>
-                        <td>@Math.Round(Model.daily[1].temp.eve)°</td>
-                        <td>@Math.Round(Model.daily[1].feels_like.night)°</td>
+                        <th scope="row">Clouds</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>@Model.daily[0].clouds%</td>
                     </tr>
                 </table>
             </div>
@@ -153,34 +158,36 @@
     <div class="card mx-auto" id=card2 onclick="onclickday3()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6 id="day3">Wednesday</h6>
+                <h6 id="day3" style="float: left;">Wednesday</h6>
+                <h6 style="float: right;">@Math.Round(Model.daily[2].temp.day)°(@Math.Round(Model.daily[2].feels_like.day)°), @Math.Round(Model.daily[2].wind_speed) m/s, @Math.Round(Model.daily[2].rain) mm</h6>
             </div>
             <div class="card-body" id="body3">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">Temp</th>
-                        <th scope="col">Feels like</th>
+                        <th scope="col">Morning</th>
+                        <th scope="col">Daytime</th>
+                        <th scope="col">Night</th>
+                        <th scope="col">All day</th>
                     </tr>
                     <tr>
-                        <th scope="row">Morning</th>
+                        <th scope="row">Temp</th>
                         <td>@Math.Round(Model.daily[2].temp.morn)°</td>
+                        <td>@Math.Round(Model.daily[2].temp.day)°</td>
+                        <td>@Math.Round(Model.daily[2].temp.night)°</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Feelslike</th>
                         <td>@Math.Round(Model.daily[2].feels_like.morn)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Daytime</th>
-                        <td>@Math.Round(Model.daily[2].temp.day)°</td>
                         <td>@Math.Round(Model.daily[2].feels_like.day)°</td>
+                        <td>@Math.Round(Model.daily[2].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Evening</th>
-                        <td>@Math.Round(Model.daily[2].temp.day)°</td>
-                        <td>@Math.Round(Model.daily[2].feels_like.eve)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Night</th>
-                        <td>@Math.Round(Model.daily[2].temp.eve)°</td>
-                        <td>@Math.Round(Model.daily[2].feels_like.night)°</td>
+                        <th scope="row">Clouds</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>@Model.daily[0].clouds%</td>
                     </tr>
                 </table>
             </div>
@@ -189,34 +196,36 @@
     <div class="card mx-auto" id=card2 onclick="onclickday4()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6 id="day4">Thursday</h6>
+                <h6 id="day4" style="float: left;">Thursday</h6>
+                <h6 style="float: right;">@Math.Round(Model.daily[3].temp.day)°(@Math.Round(Model.daily[3].feels_like.day)°), @Math.Round(Model.daily[3].wind_speed) m/s, @Math.Round(Model.daily[3].rain) mm</h6>
             </div>
             <div class="card-body" id="body4">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">Temp</th>
-                        <th scope="col">Feels like</th>
+                        <th scope="col">Morning</th>
+                        <th scope="col">Daytime</th>
+                        <th scope="col">Night</th>
+                        <th scope="col">All day</th>
                     </tr>
                     <tr>
-                        <th scope="row">Morning</th>
+                        <th scope="row">Temp</th>
                         <td>@Math.Round(Model.daily[3].temp.morn)°</td>
+                        <td>@Math.Round(Model.daily[3].temp.day)°</td>
+                        <td>@Math.Round(Model.daily[3].temp.night)°</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Feelslike</th>
                         <td>@Math.Round(Model.daily[3].feels_like.morn)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Daytime</th>
-                        <td>@Math.Round(Model.daily[3].temp.day)°</td>
                         <td>@Math.Round(Model.daily[3].feels_like.day)°</td>
+                        <td>@Math.Round(Model.daily[3].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Evening</th>
-                        <td>@Math.Round(Model.daily[3].temp.day)°</td>
-                        <td>@Math.Round(Model.daily[3].feels_like.eve)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Night</th>
-                        <td>@Math.Round(Model.daily[3].temp.eve)°</td>
-                        <td>@Math.Round(Model.daily[3].feels_like.night)°</td>
+                        <th scope="row">Clouds</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>@Model.daily[0].clouds%</td>
                     </tr>
                 </table>
             </div>
@@ -225,34 +234,36 @@
     <div class="card mx-auto" id=card2 onclick="onclickday5()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6 id="day5">Friday</h6>
+                <h6 id="day5" style="float: left;">Friday</h6>
+                <h6 style="float: right;">@Math.Round(Model.daily[4].temp.day)°(@Math.Round(Model.daily[4].feels_like.day)°), @Math.Round(Model.daily[4].wind_speed) m/s, @Math.Round(Model.daily[4].rain) mm</h6>
             </div>
             <div class="card-body" id="body5">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">Temp</th>
-                        <th scope="col">Feels like</th>
+                        <th scope="col">Morning</th>
+                        <th scope="col">Daytime</th>
+                        <th scope="col">Night</th>
+                        <th scope="col">All day</th>
                     </tr>
                     <tr>
-                        <th scope="row">Morning</th>
+                        <th scope="row">Temp</th>
                         <td>@Math.Round(Model.daily[4].temp.morn)°</td>
+                        <td>@Math.Round(Model.daily[4].temp.day)°</td>
+                        <td>@Math.Round(Model.daily[4].temp.night)°</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Feelslike</th>
                         <td>@Math.Round(Model.daily[4].feels_like.morn)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Daytime</th>
-                        <td>@Math.Round(Model.daily[4].temp.day)°</td>
                         <td>@Math.Round(Model.daily[4].feels_like.day)°</td>
+                        <td>@Math.Round(Model.daily[4].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Evening</th>
-                        <td>@Math.Round(Model.daily[4].temp.day)°</td>
-                        <td>@Math.Round(Model.daily[4].feels_like.eve)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Night</th>
-                        <td>@Math.Round(Model.daily[4].temp.eve)°</td>
-                        <td>@Math.Round(Model.daily[4].feels_like.night)°</td>
+                        <th scope="row">Clouds</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>@Model.daily[0].clouds%</td>
                     </tr>
                 </table>
             </div>
@@ -261,34 +272,36 @@
     <div class="card mx-auto" id=card2 onclick="onclickday6()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6 id="day6">Saturday</h6>
+                <h6 id="day6" style="float: left;">Saturday</h6>
+                <h6 style="float: right;">@Math.Round(Model.daily[5].temp.day)°(@Math.Round(Model.daily[5].feels_like.day)°), @Math.Round(Model.daily[5].wind_speed) m/s, @Math.Round(Model.daily[5].rain) mm</h6>
             </div>
             <div class="card-body" id="body6">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">Temp</th>
-                        <th scope="col">Feels like</th>
+                        <th scope="col">Morning</th>
+                        <th scope="col">Daytime</th>
+                        <th scope="col">Night</th>
+                        <th scope="col">All day</th>
                     </tr>
                     <tr>
-                        <th scope="row">Morning</th>
+                        <th scope="row">Temp</th>
                         <td>@Math.Round(Model.daily[5].temp.morn)°</td>
+                        <td>@Math.Round(Model.daily[5].temp.day)°</td>
+                        <td>@Math.Round(Model.daily[5].temp.night)°</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Feelslike</th>
                         <td>@Math.Round(Model.daily[5].feels_like.morn)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Daytime</th>
-                        <td>@Math.Round(Model.daily[5].temp.day)°</td>
                         <td>@Math.Round(Model.daily[5].feels_like.day)°</td>
+                        <td>@Math.Round(Model.daily[5].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Evening</th>
-                        <td>@Math.Round(Model.daily[5].temp.day)°</td>
-                        <td>@Math.Round(Model.daily[5].feels_like.eve)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Night</th>
-                        <td>@Math.Round(Model.daily[5].temp.eve)°</td>
-                        <td>@Math.Round(Model.daily[5].feels_like.night)°</td>
+                        <th scope="row">Clouds</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>@Model.daily[0].clouds%</td>
                     </tr>
                 </table>
             </div>
@@ -297,34 +310,36 @@
     <div class="card mx-auto" id=card2 onclick="onclickday7()">
         <div class="card mx-auto" id="card2">
             <div class="card-header" id="card-header">
-                <h6 id="day7">Sunday</h6>
+                <h6 id="day7" style="float: left;">Sunday</h6>
+                <h6 style="float: right;">@Math.Round(Model.daily[6].temp.day)°(@Math.Round(Model.daily[6].feels_like.day)°), @Math.Round(Model.daily[6].wind_speed) m/s, @Math.Round(Model.daily[6].rain) mm</h6>
             </div>
             <div class="card-body" id="body7">
                 <table id="table">
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">Temp</th>
-                        <th scope="col">Feels like</th>
+                        <th scope="col">Morning</th>
+                        <th scope="col">Daytime</th>
+                        <th scope="col">Night</th>
+                        <th scope="col">All day</th>
                     </tr>
                     <tr>
-                        <th scope="row">Morning</th>
+                        <th scope="row">Temp</th>
                         <td>@Math.Round(Model.daily[6].temp.morn)°</td>
+                        <td>@Math.Round(Model.daily[6].temp.day)°</td>
+                        <td>@Math.Round(Model.daily[6].temp.night)°</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Feelslike</th>
                         <td>@Math.Round(Model.daily[6].feels_like.morn)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Daytime</th>
-                        <td>@Math.Round(Model.daily[6].temp.day)°</td>
                         <td>@Math.Round(Model.daily[6].feels_like.day)°</td>
+                        <td>@Math.Round(Model.daily[6].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Evening</th>
-                        <td>@Math.Round(Model.daily[6].temp.day)°</td>
-                        <td>@Math.Round(Model.daily[6].feels_like.eve)°</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Night</th>
-                        <td>@Math.Round(Model.daily[6].temp.eve)°</td>
-                        <td>@Math.Round(Model.daily[6].feels_like.night)°</td>
+                        <th scope="row">Clouds</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>@Model.daily[0].clouds%</td>
                     </tr>
                 </table>
             </div>

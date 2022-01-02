@@ -16,6 +16,11 @@ namespace ApiPlayground.Models
         public string icon { get; set; }
     }
 
+    public class Rain
+    {
+        public double _1h { get; set; }
+    }
+
     public class Current
     {
         [JsonProperty("dt")]
@@ -96,6 +101,8 @@ namespace ApiPlayground.Models
         public double pop { get; set; }
         [JsonProperty("snow")]
         public Snow snow { get; set; }
+        [JsonProperty("rain")]
+        public Rain rain { get; set; }
     }
 
     public class Temp
@@ -162,6 +169,8 @@ namespace ApiPlayground.Models
         public string clouds { get; set; }
         [JsonProperty("pop")]
         public double pop { get; set; }
+        [JsonProperty("rain")]
+        public double rain { get; set; }
         [JsonProperty("snow")]
         public double snow { get; set; }
         [JsonProperty("uvi")]

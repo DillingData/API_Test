@@ -20,70 +20,70 @@ function getday() {
 
     if (day == 0)
     {
-        document.getElementById("day1").innerHTML = "Sunday";
-        document.getElementById("day2").innerHTML = "Monday";
-        document.getElementById("day3").innerHTML = "Tuesday";
-        document.getElementById("day4").innerHTML = "Wednesday";
-        document.getElementById("day5").innerHTML = "Thursday";
-        document.getElementById("day6").innerHTML = "Friday";
-        document.getElementById("day7").innerHTML = "Saturday";
+        document.getElementById("day1").innerHTML = "Sunday ";
+        document.getElementById("day2").innerHTML = "Monday ";
+        document.getElementById("day3").innerHTML = "Tuesday ";
+        document.getElementById("day4").innerHTML = "Wednesday ";
+        document.getElementById("day5").innerHTML = "Thursday ";
+        document.getElementById("day6").innerHTML = "Friday ";
+        document.getElementById("day7").innerHTML = "Saturday ";
     }
     if (day == 1) {
-        document.getElementById("day1").innerHTML = "Monday";
-        document.getElementById("day2").innerHTML = "Tuesday";
-        document.getElementById("day3").innerHTML = "Wednesday";
-        document.getElementById("day4").innerHTML = "Thursday";
-        document.getElementById("day5").innerHTML = "Friday";
-        document.getElementById("day6").innerHTML = "Saturday";
-        document.getElementById("day7").innerHTML = "Sunday";
+        document.getElementById("day1").innerHTML = "Monday ";
+        document.getElementById("day2").innerHTML = "Tuesday ";
+        document.getElementById("day3").innerHTML = "Wednesday ";
+        document.getElementById("day4").innerHTML = "Thursday ";
+        document.getElementById("day5").innerHTML = "Friday ";
+        document.getElementById("day6").innerHTML = "Saturday ";
+        document.getElementById("day7").innerHTML = "Sunday ";
     } if (day == 2) {
-        document.getElementById("day1").innerHTML = "Tuesday";
-        document.getElementById("day2").innerHTML = "Wednesday";
-        document.getElementById("day3").innerHTML = "Thursday";
-        document.getElementById("day4").innerHTML = "Friday";
-        document.getElementById("day5").innerHTML = "Saturday";
-        document.getElementById("day6").innerHTML = "Sunday";
-        document.getElementById("day7").innerHTML = "Monday";
+        document.getElementById("day1").innerHTML = "Tuesday ";
+        document.getElementById("day2").innerHTML = "Wednesday ";
+        document.getElementById("day3").innerHTML = "Thursday ";
+        document.getElementById("day4").innerHTML = "Friday ";
+        document.getElementById("day5").innerHTML = "Saturday ";
+        document.getElementById("day6").innerHTML = "Sunday ";
+        document.getElementById("day7").innerHTML = "Monday ";
     } if (day == 3) {
-        document.getElementById("day1").innerHTML = "Wednesday";
-        document.getElementById("day2").innerHTML = "Thursday";
-        document.getElementById("day3").innerHTML = "Friday";
-        document.getElementById("day4").innerHTML = "Saturday";
-        document.getElementById("day5").innerHTML = "Sunday";
-        document.getElementById("day6").innerHTML = "Monday";
-        document.getElementById("day7").innerHTML = "Tuesday";
+        document.getElementById("day1").innerHTML = "Wednesday ";
+        document.getElementById("day2").innerHTML = "Thursday ";
+        document.getElementById("day3").innerHTML = "Friday ";
+        document.getElementById("day4").innerHTML = "Saturday ";
+        document.getElementById("day5").innerHTML = "Sunday ";
+        document.getElementById("day6").innerHTML = "Monday ";
+        document.getElementById("day7").innerHTML = "Tuesday ";
     } if (day == 4) {
-        document.getElementById("day1").innerHTML = "Thursday";
-        document.getElementById("day2").innerHTML = "Friday";
-        document.getElementById("day3").innerHTML = "Saturday";
-        document.getElementById("day4").innerHTML = "Sunday";
-        document.getElementById("day5").innerHTML = "Monday";
-        document.getElementById("day6").innerHTML = "Tuesday";
-        document.getElementById("day7").innerHTML = "Wednesday";
+        document.getElementById("day1").innerHTML = "Thursday ";
+        document.getElementById("day2").innerHTML = "Friday ";
+        document.getElementById("day3").innerHTML = "Saturday ";
+        document.getElementById("day4").innerHTML = "Sunday ";
+        document.getElementById("day5").innerHTML = "Monday ";
+        document.getElementById("day6").innerHTML = "Tuesday ";
+        document.getElementById("day7").innerHTML = "Wednesday ";
     } if (day == 5) {
-        document.getElementById("day1").innerHTML = "Friday";
-        document.getElementById("day2").innerHTML = "Saturday";
-        document.getElementById("day3").innerHTML = "Sunday";
-        document.getElementById("day4").innerHTML = "Monday";
-        document.getElementById("day5").innerHTML = "Tuesday";
-        document.getElementById("day6").innerHTML = "Wednesday";
-        document.getElementById("day7").innerHTML = "Thursday";
+        document.getElementById("day1").innerHTML = "Friday ";
+        document.getElementById("day2").innerHTML = "Saturday ";
+        document.getElementById("day3").innerHTML = "Sunday ";
+        document.getElementById("day4").innerHTML = "Monday ";
+        document.getElementById("day5").innerHTML = "Tuesday ";
+        document.getElementById("day6").innerHTML = "Wednesday ";
+        document.getElementById("day7").innerHTML = "Thursday ";
     } if (day == 6) {
-        document.getElementById("day1").innerHTML = "Saturday";
-        document.getElementById("day2").innerHTML = "Sunday";
-        document.getElementById("day3").innerHTML = "Monday";
-        document.getElementById("day4").innerHTML = "Tuesday";
-        document.getElementById("day5").innerHTML = "Wednesday";
-        document.getElementById("day6").innerHTML = "Thursday";
-        document.getElementById("day7").innerHTML = "Friday";
+        document.getElementById("day1").innerHTML = "Saturday ";
+        document.getElementById("day2").innerHTML = "Sunday ";
+        document.getElementById("day3").innerHTML = "Monday ";
+        document.getElementById("day4").innerHTML = "Tuesday ";
+        document.getElementById("day5").innerHTML = "Wednesday ";
+        document.getElementById("day6").innerHTML = "Thursday ";
+        document.getElementById("day7").innerHTML = "Friday ";
     } if (day == 7) {
-        document.getElementById("day1").innerHTML = "Sunday";
-        document.getElementById("day2").innerHTML = "Monday";
-        document.getElementById("day3").innerHTML = "Tuesday";
-        document.getElementById("day4").innerHTML = "Wednesday";
-        document.getElementById("day5").innerHTML = "Thursday";
-        document.getElementById("day6").innerHTML = "Friday";
-        document.getElementById("day7").innerHTML = "Saturday";
+        document.getElementById("day1").innerHTML = "Sunday ";
+        document.getElementById("day2").innerHTML = "Monday ";
+        document.getElementById("day3").innerHTML = "Tuesday ";
+        document.getElementById("day4").innerHTML = "Wednesday ";
+        document.getElementById("day5").innerHTML = "Thursday ";
+        document.getElementById("day6").innerHTML = "Friday ";
+        document.getElementById("day7").innerHTML = "Saturday ";
     }
 }
 
