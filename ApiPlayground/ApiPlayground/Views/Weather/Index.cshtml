@@ -68,7 +68,7 @@
             <p class="mx-auto">Wind is coming from @Model.current.wind_deg°</p>
             @try
              {
-                 <p>It will rain @Model.hourly[0].rain._1h mm for the next hour</p>
+                 <p>It will rain @Math.Round(Model.hourly[0].rain._1h) mm for the next hour</p>
              }
              catch
              {
@@ -114,7 +114,7 @@
                         <td>@Math.Round(Model.daily[0].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Clouds</th>
+                        <th scope="row">Cloud Cover</th>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -152,11 +152,11 @@
                         <td>@Math.Round(Model.daily[1].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Clouds</th>
+                        <th scope="row">Cloud Cover</th>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>@Model.daily[0].clouds%</td>
+                        <td>@Model.daily[1].clouds%</td>
                     </tr>
                 </table>
             </div>
@@ -190,11 +190,11 @@
                         <td>@Math.Round(Model.daily[2].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Clouds</th>
+                        <th scope="row">Cloud Cover</th>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>@Model.daily[0].clouds%</td>
+                        <td>@Model.daily[2].clouds%</td>
                     </tr>
                 </table>
             </div>
@@ -228,11 +228,11 @@
                         <td>@Math.Round(Model.daily[3].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Clouds</th>
+                        <th scope="row">Cloud Cover</th>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>@Model.daily[0].clouds%</td>
+                        <td>@Model.daily[3].clouds%</td>
                     </tr>
                 </table>
             </div>
@@ -266,11 +266,11 @@
                         <td>@Math.Round(Model.daily[4].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Clouds</th>
+                        <th scope="row">Cloud Cover</th>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>@Model.daily[0].clouds%</td>
+                        <td>@Model.daily[4].clouds%</td>
                     </tr>
                 </table>
             </div>
@@ -304,11 +304,11 @@
                         <td>@Math.Round(Model.daily[5].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Clouds</th>
+                        <th scope="row">Cloud Cover</th>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>@Model.daily[0].clouds%</td>
+                        <td>@Model.daily[5].clouds%</td>
                     </tr>
                 </table>
             </div>
@@ -342,11 +342,11 @@
                         <td>@Math.Round(Model.daily[6].feels_like.night)</td>
                     </tr>
                     <tr>
-                        <th scope="row">Clouds</th>
+                        <th scope="row">Cloud Cover</th>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>@Model.daily[0].clouds%</td>
+                        <td>@Model.daily[6].clouds%</td>
                     </tr>
                 </table>
             </div>
