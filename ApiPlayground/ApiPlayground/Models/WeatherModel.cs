@@ -18,6 +18,7 @@ namespace ApiPlayground.Models
 
     public class Rain
     {
+        [JsonProperty("_1h")]
         public double _1h { get; set; }
     }
 
