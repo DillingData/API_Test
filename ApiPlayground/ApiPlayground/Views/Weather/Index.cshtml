@@ -49,8 +49,26 @@
     }
 </style>
 
+
+
 @if(Model != null)
 {
+    @if(Model.alerts != null)
+    {
+        <div class="card mx-auto" id="card">
+            <div class="card-header" id="card-header">
+                <h4 class="mx-auto">WEATHER ALERT!</h4>
+            </div>
+            <div class="card-body mx-auto">
+                @foreach(var alert in Model.alerts)
+                {
+                    <p>@alert.sender_name is broadcasting the following alert</p>
+                    <p>@alert.description</p>
+                }
+            </div>
+        </div>
+    }
+
     @foreach(var code in Model.current.weather)
     {
         <p id="code">@code.icon</p>

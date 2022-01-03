@@ -22,6 +22,13 @@ namespace ApiPlayground.Models
         public double _1h { get; set; }
     }
 
+    public class Alerts
+    {
+        public string sender_name { get; set; }
+        public string description { get; set; }
+
+    }
+
     public class Current
     {
         [JsonProperty("dt")]
@@ -196,5 +203,7 @@ namespace ApiPlayground.Models
         public List<Hourly> hourly { get; set; }
         [JsonProperty("daily")]
         public List<Daily> daily { get; set; }
+        [JsonProperty("alerts")]
+        public List<Alerts> alerts { get; set; }
     }
 }
