@@ -80,6 +80,7 @@
         </div>
         <div class="card-body mx-auto">
             <img class="mx-auto" src="" id="weatherPic" style="width: 5rem;" />
+            <p class="mx-auto">@Model.current.weather[0].description</p>
             <p class="mx-auto">Temperature is @Math.Round(Model.current.temp)°</p>
             <p class="mx-auto">Feels like @Math.Round(Model.current.feels_like)°</p>
             <p class="mx-auto">Wind: @Math.Round(Model.current.wind_speed) m/s, gusting: @Math.Round(Model.current.wind_gust) m/s</p>
