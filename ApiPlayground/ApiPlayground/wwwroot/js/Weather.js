@@ -12,7 +12,6 @@ window.onload = navigator.permissions && navigator.permissions.query({ name: 'ge
         }
     })
 
-
     function myFunction() {
     if (confirm("You must allow location services for this page to work properly")) {
         getLocation();
