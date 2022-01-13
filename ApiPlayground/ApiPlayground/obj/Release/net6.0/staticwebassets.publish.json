@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uy59jOVIp3mlW5j86dJ/YVCZL02qKIoyy4SGwMdmhqU=",
+  "Hash": "DZXlqUwJ7CMDr8BGvWYkUVLp2wOc7pSpkDitnQ6ESTk=",
   "Source": "ApiPlayground",
   "BasePath": "_content/ApiPlayground",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\GitProjects\\apiplayground\\ApiPlayground\\ApiPlayground\\wwwroot\\js\\SnakeGame.js",
+      "SourceId": "ApiPlayground",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GitProjects\\apiplayground\\ApiPlayground\\ApiPlayground\\wwwroot\\",
+      "BasePath": "_content/ApiPlayground",
+      "RelativePath": "js/SnakeGame.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\SnakeGame.js"
     },
     {
       "Identity": "C:\\GitProjects\\apiplayground\\ApiPlayground\\ApiPlayground\\wwwroot\\js\\Weather.js",
