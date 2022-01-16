@@ -18,4 +18,15 @@ function mainMenu(){
     ctx.fillStyle = "grey";
     ctx.textAlign = "center";
     ctx.fillText("Snake Game", 170, 70);
+
+    ctx.beginPath();
+    ctx.lineWidth = "5";
+    ctx.strokeStyle = "grey";
+    ctx.rect(110, 300, 120, 40);
+    ctx.stroke();
+
+    ctx.font = "20px Arial";
+    ctx.fillStyle = "Grey";
+    ctx.textAlign = "center";
+    ctx.fillText("Play Game", 170, 328);
 }
