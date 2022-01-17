@@ -2,9 +2,6 @@
 var ctx = canvas.getContext("2d");
 
 window.onload = function load() {
-    //canvas.style.width = "340px";
-    //canvas.style.height = "500px";
-
     canvas.width = 340;
     canvas.height = 500;
 
@@ -12,6 +9,9 @@ window.onload = function load() {
     mainMenu();
 }
 
+function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
 
 function mainMenu(){
     ctx.font = "30px Arial";
@@ -30,3 +30,10 @@ function mainMenu(){
     ctx.textAlign = "center";
     ctx.fillText("Play Game", 170, 328);
 }
+
+function click(e) {
+    //alert(e.clientX + " & " + e.clientY);
+    console.log(e.clientX + "," + e.clientY);
+}
+
+canvas.addEventListener("mousedown", click); 
