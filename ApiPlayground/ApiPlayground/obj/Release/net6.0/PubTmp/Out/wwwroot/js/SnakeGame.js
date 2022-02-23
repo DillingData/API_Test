@@ -3,6 +3,22 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
+class Player {
+    constructor() {
+        this.position = {
+            x: 170,
+            y: 70
+        }
+        this.width = 10;
+        this.height = 10;
+    }
+
+    draw() {
+        ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
+        ctx.fillStyle = "grey";
+    }
+}
+
 //Runs when the page have loaded
 window.onload = function load() {
     canvas.width = 340;
@@ -23,23 +39,18 @@ function mainMenu(){
     ctx.fillStyle = "grey";
     ctx.textAlign = "center";
     ctx.fillText("Snake Game", 170, 70);
-
-    //ctx.beginPath();
-    //ctx.lineWidth = "5";
-    //ctx.strokeStyle = "grey";
-    //ctx.rect(110, 300, 120, 40);
-    //ctx.stroke();
-
-    //ctx.font = "20px Arial";
-    //ctx.fillStyle = "Grey";
-    //ctx.textAlign = "center";
-    //ctx.fillText("Play Game", 170, 328);
 }
 
-//Click event thats grabs the cursor location on the canvas (this changes depending on the size of the device (mobile, tablet or PC))
-function click(e) {
-    //alert(e.clientX + " & " + e.clientY);
-    console.log(e.clientX + "," + e.clientY);
+//Run the game
+function runGame() {
+    clearCanvas();
+    animate();
 }
 
-canvas.addEventListener("mousedown", click); 
+const player = new Player();
+
+//animation loop
+function animate() {
+    requestAnimationFrame(animate);
+    player.draw();
+}
